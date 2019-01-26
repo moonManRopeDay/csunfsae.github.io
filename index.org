@@ -70,7 +70,36 @@
     for future expansion. 
 
 ** Wiring  
+   - These transceivers are connected to the Jetson Tx2 using the J21 header.
+
+***  Can Bus 0
+        | Device Pin | Jetson Pin                  |
+        |------------|-----------------------------| 
+        | 3.3v       | (J26 Header)              2 |
+        | GND        | (J26 Header)             11 |
+        | CAN_RX     | (J26 Header)              5 |
+        | CAN_TX     | (J26 Header)              7 |
+
+
+*** Can Bus 1
+        | Device Pin | Jetson Pin                  |
+        |------------|-----------------------------| 
+        | 3.3v       | (J21 Header)             17 |
+        | GND        | (J26 Header)             21 |
+        | CAN_RX     | (J26 Header)             15 |
+        | CAN_TX     | (J26 Header)             17 |
+
+
+
+
+*** J21 Header
+*** Connections 
 ** Software
+   The software to support this device is actually split up into two ROS nodes. The 
+   first is located in I2C_IMU and the other is in temp_and_pressure. This Waveshare
+   device is actually composed to two separate devices the MPU-9255 and the BMP280
+   which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
+   gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
 * IMU
 * Analog Sensors
 * Digital Sensors

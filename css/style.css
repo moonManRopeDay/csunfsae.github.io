@@ -82,8 +82,8 @@ code{
     font-weight:500
 }
 
-img{
-    width: 60vw;
+img {
+    width: 60vw !important;
 }
 
 @media (min-width:992px){
