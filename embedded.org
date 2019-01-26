@@ -72,6 +72,19 @@
     - Make sure node is installed. See helpful links.
     - Make sure your Node modules are installed.
     - Check that your CMakeList includes your node files. See helpful links.
+*** How do I compile my code? 
+    1. Make sure the CMakeList File is correctly configured.
+    2. Make sure you =$ source devel/setup.bash= from the =catkin_ws= directory of the project.
+    3. Run =$ catkin_make=
+    4. Otherwise see the helpful links.
+*** How do I run my code?
+    Prereq: **Always run =$ source devel/setup.bash= from =catkin_ws= **
+    1. Make sure ros core is running: =$ roscore=
+    2. To run each process run =$ rosrun fsae_electric_vehicle **Name of your node**= (if its nodejs add the .js extension)
+*** I'm tired of running each process one by one! 
+    You'll have to write your own roslaunch file. Be sure to consult the helpful links but here a quick explanation.
+
+
 * Can Bus  
 ** CAN Transceiver
 #+DOWNLOADED: file:///home/cristian/Downloads/SN65HVD230-CAN-Board-2.jpg @ 2019-01-25 18:22:08
@@ -147,7 +160,10 @@
   - [[https://www.jetsonhacks.com/2017/03/21/jetpack-3-0-nvidia-jetson-tx2-development-kit/][How to reinstall the jetpack.]]
   - [[https://www.jetsonhacks.com/2017/03/27/robot-operating-system-ros-nvidia-jetson-tx2/][How to install ROS on the Tx2.]] 
   - [[https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages][How to install Nodejs.]] 
-  - [[http://wiki.ros.org/rosnodejs][How to ROS your Nodejs.]] 
+  - [[http://wiki.ros.org/rosnodejs][How to ROS your Nodejs.]]
+  - [[http://wiki.ros.org/ROS/Tutorials][How to get started with ROS.]]
+  - [[http://wiki.ros.org/roslaunch/XML][How to write your roslauch file.]]
+  - [[http://wiki.ros.org/roslaunch/XML][Everything about roslauch files.]] 
 * License
 
   The MIT License (MIT)
