@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-01-26 Sat 01:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formula Embedded Wiki</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Forumula Embedded" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.tocify.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/org-bootstrap.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Formula Embedded Wiki</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org684b82d">About</a>
+<ul>
+<li><a href="#org3aaa1fb">What's the point of this?</a></li>
+<li><a href="#org2477379">Where do I run this?</a></li>
+<li><a href="#orgad6378e">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#orga049031">ROS</a>
+<ul>
+<li><a href="#org75c6916">ROS Layout</a></li>
+<li><a href="#orgc6c1493">Development Philosophy</a></li>
+</ul>
+</li>
+<li><a href="#org983c937">Can Bus</a>
+<ul>
+<li><a href="#org7a16afd">CAN Transceiver</a></li>
+<li><a href="#org9048a01">Wiring</a></li>
+<li><a href="#org48d6684">Software</a></li>
+</ul>
+</li>
+<li><a href="#org1a7415b">IMU</a>
+<ul>
+<li><a href="#orge21bc16">10 DOF IMU</a></li>
+<li><a href="#orgd179a35">Wiring</a></li>
+<li><a href="#org5d645ef">Software</a></li>
+</ul>
+</li>
+<li><a href="#org6bea3f4">Analog Sensors</a>
+<ul>
+<li><a href="#org281a20e">Analog to Digital Converter</a></li>
+</ul>
+</li>
+<li><a href="#orgc45f051">Digital Sensors</a></li>
+<li><a href="#org472b647">4G LTE</a>
+<ul>
+<li><a href="#org008253c">4G Modem</a></li>
+</ul>
+</li>
+<li><a href="#orgf7e5f71">License</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org684b82d" class="outline-2">
+<h2 id="org684b82d">About</h2>
+<div class="outline-text-2" id="text-org684b82d">
+</div>
+<div id="outline-container-org3aaa1fb" class="outline-3">
+<h3 id="org3aaa1fb">What's the point of this?</h3>
+<div class="outline-text-3" id="text-org3aaa1fb">
+<p>
+The purpose of this project is to provide both real time transmission of 
+sensor data from our formula style electric vehicle and local storage 
+for this data. In addition to collecting the data this project is also 
+meant to filter these data signals, interface to the motor controllers, 
+and provide support for future features such as active aerodynamics, traction 
+control, etc.
+</p>
+</div>
+</div>
+<div id="outline-container-org2477379" class="outline-3">
+<h3 id="org2477379">Where do I run this?</h3>
+<div class="outline-text-3" id="text-org2477379">
+<p>
+This software is based around <a href="http://www.ros.org">ROS</a> and, is meant to run on an Nvidia
+Jetson Tx2. In addition to this SOC there are other sensors and boards 
+necessary to communicate with other parts of the system. For a full
+parts list refer to the internal documention found on the Google Drive.
+</p>
+</div>
+</div>
+<div id="outline-container-orgad6378e" class="outline-3">
+<h3 id="orgad6378e">FAQ</h3>
+<div class="outline-text-3" id="text-orgad6378e">
+</div>
+<div id="outline-container-org6add077" class="outline-4">
+<h4 id="org6add077">Why ROS?</h4>
+<div class="outline-text-4" id="text-org6add077">
+<p>
+This is the most commonly asked question we get by other computer science 
+students or engineers. The answer to that question is that it provides an excellent 
+means of inter-process communication so that multiple processes written in different 
+languages can communicate efficiently and reliably. Additionally it's one of the most 
+documented and well supported frameworks that plays well with our hardware platform.
+Lastly it enables us to reuse software so we can focus on adding features to our 
+system without compromising its reliability. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf9a4eb" class="outline-4">
+<h4 id="orgaf9a4eb">Why the Nvidia Jetson?</h4>
+<div class="outline-text-4" id="text-orgaf9a4eb">
+<p>
+This was chosen with a couple of considerations in mind such as I/O availability, 
+flexibility, and speed. It provides all of the necessary means of communication 
+with our sensors and ECUs found on our electric vehicle.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga049031" class="outline-2">
+<h2 id="orga049031">ROS</h2>
+<div class="outline-text-2" id="text-orga049031">
+</div>
+<div id="outline-container-org75c6916" class="outline-3">
+<h3 id="org75c6916">ROS Layout</h3>
+<div class="outline-text-3" id="text-org75c6916">
+
+<div class="figure">
+<p><img src="ROS/JetsonRoshtml_2019-01-25_18-04-50.png" alt="JetsonRoshtml_2019-01-25_18-04-50.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc6c1493" class="outline-3">
+<h3 id="orgc6c1493">Development Philosophy</h3>
+<div class="outline-text-3" id="text-orgc6c1493">
+<p>
+We keep a few things in mind when designing and implementing new ROS nodes.
+</p>
+<ol class="org-ol">
+<li>How maintainable each node will be in the future.</li>
+<li>How reusable each node will be in the future.</li>
+</ol>
+
+<p>
+Understanding how ROS messages and processes function is essential in making
+wise design decisions. Most people are quick to think that by eliminating ROS Nodes
+the system will become more efficent however this isn't always the case. Additionally
+it's important to keep in mind that a more monolithic system makes each node more 
+difficult to maintain and reduces the reusebility of the software (comp 380?).
+Therefore when looking to improve the system by either adding additional functionality
+or making improvements to performance it's important to make sure that each node performs
+only a single function (e.g. getting data from a single device and publishing its data). The 
+rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
+instead describe parts of the system refrencing ROS nodes along the way that handle 
+that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
+only person developing this so keep the next person informed.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org983c937" class="outline-2">
+<h2 id="org983c937">Can Bus</h2>
+<div class="outline-text-2" id="text-org983c937">
+</div>
+<div id="outline-container-org7a16afd" class="outline-3">
+<h3 id="org7a16afd">CAN Transceiver</h3>
+<div class="outline-text-3" id="text-org7a16afd">
+
+<div class="figure">
+<p><img src="Can%20Bus/SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" alt="SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-org9ed8199" class="outline-4">
+<h4 id="org9ed8199">SN65HVD230 CAN Board</h4>
+<div class="outline-text-4" id="text-org9ed8199">
+<p>
+Two Can Bus transceivers were used on this system. One was used
+to communicate to the Motor Controller Unit and the other was meant
+for future expansion. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9048a01" class="outline-3">
+<h3 id="org9048a01">Wiring</h3>
+<div class="outline-text-3" id="text-org9048a01">
+<ul class="org-ul">
+<li>These transceivers are connected to the Jetson Tx2 using the J21 header.</li>
+</ul>
+</div>
+<div id="outline-container-org7368a1f" class="outline-4">
+<h4 id="org7368a1f">Can Bus 0</h4>
+<div class="outline-text-4" id="text-org7368a1f">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Device Pin</th>
+<th scope="col" class="org-left">Jetson Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">3.3v</td>
+<td class="org-left">(J26 Header)  2</td>
+</tr>
+
+<tr>
+<td class="org-left">GND</td>
+<td class="org-left">(J26 Header) 11</td>
+</tr>
+
+<tr>
+<td class="org-left">CAN<sub>RX</sub></td>
+<td class="org-left">(J26 Header)  5</td>
+</tr>
+
+<tr>
+<td class="org-left">CAN<sub>TX</sub></td>
+<td class="org-left">(J26 Header)  7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga7195c5" class="outline-4">
+<h4 id="orga7195c5">Can Bus 1</h4>
+<div class="outline-text-4" id="text-orga7195c5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Device Pin</th>
+<th scope="col" class="org-left">Jetson Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">3.3v</td>
+<td class="org-left"><b><b>(J21 Header)</b></b> 17</td>
+</tr>
+
+<tr>
+<td class="org-left">GND</td>
+<td class="org-left">(J26 Header) 21</td>
+</tr>
+
+<tr>
+<td class="org-left">CAN<sub>RX</sub></td>
+<td class="org-left">(J26 Header) 15</td>
+</tr>
+
+<tr>
+<td class="org-left">CAN<sub>TX</sub></td>
+<td class="org-left">(J26 Header) 17</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga8933e1" class="outline-4">
+<h4 id="orga8933e1">J26 Header</h4>
+<div class="outline-text-4" id="text-orga8933e1">
+
+<div class="figure">
+<p><img src="Can%20Bus/J26_Header_2019-01-25_21-45-45.png" alt="J26_Header_2019-01-25_21-45-45.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org48d6684" class="outline-3">
+<h3 id="org48d6684">Software</h3>
+<div class="outline-text-3" id="text-org48d6684">
+<p>
+The software to support this device is actually split up into two ROS nodes. The 
+first is located in <code>I2C_IMU</code> and the other is in <code>temp_and_pressure</code>. This Waveshare
+device is actually composed to two separate devices the MPU-9255 and the BMP280
+which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
+gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a7415b" class="outline-2">
+<h2 id="org1a7415b">IMU</h2>
+<div class="outline-text-2" id="text-org1a7415b">
+</div>
+<div id="outline-container-orge21bc16" class="outline-3">
+<h3 id="orge21bc16">10 DOF IMU</h3>
+<div class="outline-text-3" id="text-orge21bc16">
+
+<div class="figure">
+<p><img src="IMU/10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg" alt="10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-org7915066" class="outline-4">
+<h4 id="org7915066">Waveshare 10 DOF IMU (C)</h4>
+<div class="outline-text-4" id="text-org7915066">
+<p>
+This sensor was chosen as it's directly compatible with the jetson via I2C. It currently
+is installed on I2C bus 1. This is made up of both the MPU-9255 (gyro, accel, compass) and 
+the BMP280 (pressure sensor).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd179a35" class="outline-3">
+<h3 id="orgd179a35">Wiring</h3>
+<div class="outline-text-3" id="text-orgd179a35">
+</div>
+<div id="outline-container-org2748c8e" class="outline-4">
+<h4 id="org2748c8e">I2C BUS 1</h4>
+<div class="outline-text-4" id="text-org2748c8e">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Device Pin</th>
+<th scope="col" class="org-left">Jetson Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">3.3v</td>
+<td class="org-left">(J26 Header)  2</td>
+</tr>
+
+<tr>
+<td class="org-left">GND</td>
+<td class="org-left">(J26 Header) 11</td>
+</tr>
+
+<tr>
+<td class="org-left">CAN<sub>RX</sub></td>
+<td class="org-left">(J26 Header)  5</td>
+</tr>
+
+<tr>
+<td class="org-left">CAN<sub>TX</sub></td>
+<td class="org-left">(J26 Header)  7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org5d645ef" class="outline-3">
+<h3 id="org5d645ef">Software</h3>
+</div>
+</div>
+<div id="outline-container-org6bea3f4" class="outline-2">
+<h2 id="org6bea3f4">Analog Sensors</h2>
+<div class="outline-text-2" id="text-org6bea3f4">
+</div>
+<div id="outline-container-org281a20e" class="outline-3">
+<h3 id="org281a20e">Analog to Digital Converter</h3>
+<div class="outline-text-3" id="text-org281a20e">
+
+<div class="figure">
+<p><img src="Analog%20Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png" alt="NCD_A_TO_D_2019-01-25_21-57-52.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org53d9e1c" class="outline-4">
+<h4 id="org53d9e1c">NCD 16 Analog to Digital Converter</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc45f051" class="outline-2">
+<h2 id="orgc45f051">Digital Sensors</h2>
+</div>
+<div id="outline-container-org472b647" class="outline-2">
+<h2 id="org472b647">4G LTE</h2>
+<div class="outline-text-2" id="text-org472b647">
+</div>
+<div id="outline-container-org008253c" class="outline-3">
+<h3 id="org008253c">4G Modem</h3>
+<div class="outline-text-3" id="text-org008253c">
+
+<div class="figure">
+<p><img src="4G%20LTE/4G_LTE_2019-01-25_22-00-07.png" alt="4G_LTE_2019-01-25_22-00-07.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org9a6eaa1" class="outline-4">
+<h4 id="org9a6eaa1">Sierra Wireless MC7455</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf7e5f71" class="outline-2">
+<h2 id="orgf7e5f71">License</h2>
+<div class="outline-text-2" id="text-orgf7e5f71">
+<p>
+The MIT License (MIT)
+</p>
+
+<p>
+Copyright (c) 2019 CSUN Formula SAE
+</p>
+
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+</p>
+
+<p>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+</p>
+
+<p>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Forumula Embedded</p>
+<p class="date">Created: 2019-01-26 Sat 01:05</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
