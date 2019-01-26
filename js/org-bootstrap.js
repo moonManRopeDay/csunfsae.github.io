@@ -44,5 +44,5 @@ $( document ).ready(function() {
         }
     });
 
-    table = $('table').first().addClass("table").parent().addClass("panel");
+    table = $('table').addClass("table").parent().addClass("panel");
 });

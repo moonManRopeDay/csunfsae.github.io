@@ -73,21 +73,21 @@
    - These transceivers are connected to the Jetson Tx2 using the J21 header.
 
 ***  Can Bus 0
-        | Device Pin | Jetson Pin                  |
-        |------------|-----------------------------| 
-        | 3.3v       | (J26 Header)              2 |
-        | GND        | (J26 Header)             11 |
-        | CAN_RX     | (J26 Header)              5 |
-        | CAN_TX     | (J26 Header)              7 |
 
+        | Device Pin | Jetson Pin      |
+        |------------|-----------------| 
+        | 3.3v       | (J26 Header)  2 |
+        | GND        | (J26 Header) 11 |
+        | CAN_RX     | (J26 Header)  5 |
+        | CAN_TX     | (J26 Header)  7 |
 
 *** Can Bus 1
-        | Device Pin | Jetson Pin                  |
-        |------------|-----------------------------| 
-        | 3.3v       | (J21 Header)             17 |
-        | GND        | (J26 Header)             21 |
-        | CAN_RX     | (J26 Header)             15 |
-        | CAN_TX     | (J26 Header)             17 |
+        | Device Pin | Jetson Pin      |
+        |------------|-----------------| 
+        | 3.3v       | (J21 Header) 17 |
+        | GND        | (J26 Header) 21 |
+        | CAN_RX     | (J26 Header) 15 |
+        | CAN_TX     | (J26 Header) 17 |
 
 
 

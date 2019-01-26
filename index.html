@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-01-25 Fri 18:49 -->
+<!-- 2019-01-25 Fri 21:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Formula Embedded Wiki</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -193,7 +206,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -242,42 +255,42 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgffc0b76">About</a>
+<li><a href="#orgb80f986">About</a>
 <ul>
-<li><a href="#org23ded0f">What's the point of this?</a></li>
-<li><a href="#org9e2e31a">Where do I run this?</a></li>
-<li><a href="#org519c86e">FAQ</a></li>
+<li><a href="#org6fdaeef">What's the point of this?</a></li>
+<li><a href="#org73aaf76">Where do I run this?</a></li>
+<li><a href="#orgde956cd">FAQ</a></li>
 </ul>
 </li>
-<li><a href="#orgdc4d0a8">ROS</a>
+<li><a href="#org62bd8d0">ROS</a>
 <ul>
-<li><a href="#org1bf229f">ROS Layout</a></li>
-<li><a href="#org6365a17">Development Philosophy</a></li>
+<li><a href="#org30332c9">ROS Layout</a></li>
+<li><a href="#org414e5bb">Development Philosophy</a></li>
 </ul>
 </li>
-<li><a href="#orgc9af36a">Can Bus</a>
+<li><a href="#orgc60da82">Can Bus</a>
 <ul>
-<li><a href="#org036f2a4">CAN Transceiver</a></li>
-<li><a href="#org2f76cf4">Wiring</a></li>
-<li><a href="#org352c6be">Software</a></li>
+<li><a href="#orgec1edc1">CAN Transceiver</a></li>
+<li><a href="#org96d6a2e">Wiring</a></li>
+<li><a href="#org1a1cc3f">Software</a></li>
 </ul>
 </li>
-<li><a href="#orgfa8eb8d">IMU</a></li>
-<li><a href="#orgec84cd4">Analog Sensors</a></li>
-<li><a href="#org093af90">Digital Sensors</a></li>
-<li><a href="#orge60e845">4G LTE</a></li>
-<li><a href="#orgd4166b2">License</a></li>
+<li><a href="#orge05b49e">IMU</a></li>
+<li><a href="#orge1d7059">Analog Sensors</a></li>
+<li><a href="#orgf9ce138">Digital Sensors</a></li>
+<li><a href="#org7796772">4G LTE</a></li>
+<li><a href="#org94264f4">License</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgffc0b76" class="outline-2">
-<h2 id="orgffc0b76">About</h2>
-<div class="outline-text-2" id="text-orgffc0b76">
+<div id="outline-container-orgb80f986" class="outline-2">
+<h2 id="orgb80f986">About</h2>
+<div class="outline-text-2" id="text-orgb80f986">
 </div>
-<div id="outline-container-org23ded0f" class="outline-3">
-<h3 id="org23ded0f">What's the point of this?</h3>
-<div class="outline-text-3" id="text-org23ded0f">
+<div id="outline-container-org6fdaeef" class="outline-3">
+<h3 id="org6fdaeef">What's the point of this?</h3>
+<div class="outline-text-3" id="text-org6fdaeef">
 <p>
 The purpose of this project is to provide both real time transmission of 
 sensor data from our formula style electric vehicle and local storage 
@@ -289,39 +302,39 @@ control, etc.
 </div>
 </div>
 
-<div id="outline-container-org9e2e31a" class="outline-3">
-<h3 id="org9e2e31a">Where do I run this?</h3>
-<div class="outline-text-3" id="text-org9e2e31a">
+<div id="outline-container-org73aaf76" class="outline-3">
+<h3 id="org73aaf76">Where do I run this?</h3>
+<div class="outline-text-3" id="text-org73aaf76">
 <p>
-This software is based around <a href="http://www.ros.org">ROS</a> and, is meant to be ran on an Nvidia
+This software is based around <a href="http://www.ros.org">ROS</a> and, is meant to run on an Nvidia
 Jetson Tx2. In addition to this SOC there are other sensors and boards 
 necessary to communicate with other parts of the system. For a full
-parts list refer to the internal document found on the Google Drive.
+parts list refer to the internal documention found on the Google Drive.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org519c86e" class="outline-3">
-<h3 id="org519c86e">FAQ</h3>
-<div class="outline-text-3" id="text-org519c86e">
+<div id="outline-container-orgde956cd" class="outline-3">
+<h3 id="orgde956cd">FAQ</h3>
+<div class="outline-text-3" id="text-orgde956cd">
 </div>
-<div id="outline-container-org240a419" class="outline-4">
-<h4 id="org240a419">Why ROS?</h4>
-<div class="outline-text-4" id="text-org240a419">
+<div id="outline-container-orgb1e00e5" class="outline-4">
+<h4 id="orgb1e00e5">Why ROS?</h4>
+<div class="outline-text-4" id="text-orgb1e00e5">
 <p>
-This is the most commonly asked question we get when we're asked by other
-computer science students or engineers. The answer to that question is that
-it provides an excellent means of inter-process communication so that multiple
-processes written in different languages can communicate efficiently and reliably.
-Additionally it's one of the most documented and well supported frameworks that plays
-well with our hardware platform. Lastly it enables us to reuse software so we can focus
-on adding features to our system without compromising its reliability. 
+This is the most commonly asked question we get by other computer science 
+students or engineers. The answer to that question is that it provides an excellent 
+means of inter-process communication so that multiple processes written in different 
+languages can communicate efficiently and reliably. Additionally it's one of the most 
+documented and well supported frameworks that plays well with our hardware platform.
+Lastly it enables us to reuse software so we can focus on adding features to our 
+system without compromising its reliability. 
 </p>
 </div>
 </div>
-<div id="outline-container-orgc7fa8b3" class="outline-4">
-<h4 id="orgc7fa8b3">Why the Nvidia Jetson?</h4>
-<div class="outline-text-4" id="text-orgc7fa8b3">
+<div id="outline-container-org6bd0bba" class="outline-4">
+<h4 id="org6bd0bba">Why the Nvidia Jetson?</h4>
+<div class="outline-text-4" id="text-org6bd0bba">
 <p>
 This was chosen with a couple of considerations in mind such as I/O availability, 
 flexibility, and speed. It provides all of the necessary means of communication 
@@ -331,13 +344,13 @@ with our sensors and ECUs found on our electric vehicle.
 </div>
 </div>
 </div>
-<div id="outline-container-orgdc4d0a8" class="outline-2">
-<h2 id="orgdc4d0a8">ROS</h2>
-<div class="outline-text-2" id="text-orgdc4d0a8">
+<div id="outline-container-org62bd8d0" class="outline-2">
+<h2 id="org62bd8d0">ROS</h2>
+<div class="outline-text-2" id="text-org62bd8d0">
 </div>
-<div id="outline-container-org1bf229f" class="outline-3">
-<h3 id="org1bf229f">ROS Layout</h3>
-<div class="outline-text-3" id="text-org1bf229f">
+<div id="outline-container-org30332c9" class="outline-3">
+<h3 id="org30332c9">ROS Layout</h3>
+<div class="outline-text-3" id="text-org30332c9">
 
 <div class="figure">
 <p><img src="ROS/JetsonRoshtml_2019-01-25_18-04-50.png" alt="JetsonRoshtml_2019-01-25_18-04-50.png" />
@@ -345,9 +358,9 @@ with our sensors and ECUs found on our electric vehicle.
 </div>
 </div>
 </div>
-<div id="outline-container-org6365a17" class="outline-3">
-<h3 id="org6365a17">Development Philosophy</h3>
-<div class="outline-text-3" id="text-org6365a17">
+<div id="outline-container-org414e5bb" class="outline-3">
+<h3 id="org414e5bb">Development Philosophy</h3>
+<div class="outline-text-3" id="text-org414e5bb">
 <p>
 We keep a few things in mind when designing and implementing new ROS nodes.
 </p>
@@ -357,14 +370,14 @@ We keep a few things in mind when designing and implementing new ROS nodes.
 </ol>
 
 <p>
-Understanding how ROS messages and processes are function is essential in making
+Understanding how ROS messages and processes function is essential in making
 wise design decisions. Most people are quick to think that by eliminating ROS Nodes
-will make the system more efficent however this isnt always the case. Additionally
-it's important that design a system that more monolithic makes each node more 
+the system will become more efficent however this isn't always the case. Additionally
+it's important to keep in mind that a more monolithic system makes each node more 
 difficult to maintain and reduces the reusebility of the software (comp 380?).
 Therefore when looking to improve the system by either adding additional functionality
 or making improvements to performance it's important to make sure that each node performs
-a single function (e.g. getting data from a single device and publishing its data). The 
+only a single function (e.g. getting data from a single device and publishing its data). The 
 rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
 instead describe parts of the system refrencing ROS nodes along the way that handle 
 that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
@@ -373,22 +386,22 @@ only person developing this so keep the next person informed.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc9af36a" class="outline-2">
-<h2 id="orgc9af36a">Can Bus</h2>
-<div class="outline-text-2" id="text-orgc9af36a">
+<div id="outline-container-orgc60da82" class="outline-2">
+<h2 id="orgc60da82">Can Bus</h2>
+<div class="outline-text-2" id="text-orgc60da82">
 </div>
-<div id="outline-container-org036f2a4" class="outline-3">
-<h3 id="org036f2a4">CAN Transceiver</h3>
-<div class="outline-text-3" id="text-org036f2a4">
+<div id="outline-container-orgec1edc1" class="outline-3">
+<h3 id="orgec1edc1">CAN Transceiver</h3>
+<div class="outline-text-3" id="text-orgec1edc1">
 
 <div class="figure">
 <p><img src="Can%20Bus/SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" alt="SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" />
 </p>
 </div>
 </div>
-<div id="outline-container-orga1b27c1" class="outline-4">
-<h4 id="orga1b27c1">SN65HVD230 CAN Board</h4>
-<div class="outline-text-4" id="text-orga1b27c1">
+<div id="outline-container-org1983f96" class="outline-4">
+<h4 id="org1983f96">SN65HVD230 CAN Board</h4>
+<div class="outline-text-4" id="text-org1983f96">
 <p>
 Two Can Bus transceivers were used on this system. One was used
 to communicate to the Motor Controller Unit and the other was meant
@@ -398,16 +411,17 @@ for future expansion.
 </div>
 </div>
 
-<div id="outline-container-org2f76cf4" class="outline-3">
-<h3 id="org2f76cf4">Wiring</h3>
-<div class="outline-text-3" id="text-org2f76cf4">
+<div id="outline-container-org96d6a2e" class="outline-3">
+<h3 id="org96d6a2e">Wiring</h3>
+<div class="outline-text-3" id="text-org96d6a2e">
 <ul class="org-ul">
 <li>These transceivers are connected to the Jetson Tx2 using the J21 header.</li>
 </ul>
 </div>
-<div id="outline-container-org5e5872b" class="outline-4">
-<h4 id="org5e5872b">Can Bus 0</h4>
-<div class="outline-text-4" id="text-org5e5872b">
+
+<div id="outline-container-org65af31a" class="outline-4">
+<h4 id="org65af31a">Can Bus 0</h4>
+<div class="outline-text-4" id="text-org65af31a">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -425,33 +439,31 @@ for future expansion.
 <tbody>
 <tr>
 <td class="org-left">3.3v</td>
-<td class="org-left">(J26 Header)              2</td>
+<td class="org-left">(J26 Header)  2</td>
 </tr>
 
 <tr>
 <td class="org-left">GND</td>
-<td class="org-left">(J26 Header)             11</td>
+<td class="org-left">(J26 Header) 11</td>
 </tr>
 
 <tr>
 <td class="org-left">CAN<sub>RX</sub></td>
-<td class="org-left">(J26 Header)              5</td>
+<td class="org-left">(J26 Header)  5</td>
 </tr>
 
 <tr>
 <td class="org-left">CAN<sub>TX</sub></td>
-<td class="org-left">(J26 Header)              7</td>
+<td class="org-left">(J26 Header)  7</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-
-
-<div id="outline-container-org7146820" class="outline-4">
-<h4 id="org7146820">Can Bus 1</h4>
-<div class="outline-text-4" id="text-org7146820">
+<div id="outline-container-org2cea9f5" class="outline-4">
+<h4 id="org2cea9f5">Can Bus 1</h4>
+<div class="outline-text-4" id="text-org2cea9f5">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -469,22 +481,22 @@ for future expansion.
 <tbody>
 <tr>
 <td class="org-left">3.3v</td>
-<td class="org-left">(J21 Header)             17</td>
+<td class="org-left">(J21 Header) 17</td>
 </tr>
 
 <tr>
 <td class="org-left">GND</td>
-<td class="org-left">(J26 Header)             21</td>
+<td class="org-left">(J26 Header) 21</td>
 </tr>
 
 <tr>
 <td class="org-left">CAN<sub>RX</sub></td>
-<td class="org-left">(J26 Header)             15</td>
+<td class="org-left">(J26 Header) 15</td>
 </tr>
 
 <tr>
 <td class="org-left">CAN<sub>TX</sub></td>
-<td class="org-left">(J26 Header)             17</td>
+<td class="org-left">(J26 Header) 17</td>
 </tr>
 </tbody>
 </table>
@@ -494,16 +506,16 @@ for future expansion.
 
 
 
-<div id="outline-container-orgd8d2891" class="outline-4">
-<h4 id="orgd8d2891">J21 Header</h4>
+<div id="outline-container-orgb85fc83" class="outline-4">
+<h4 id="orgb85fc83">J21 Header</h4>
 </div>
-<div id="outline-container-orgf4c1bba" class="outline-4">
-<h4 id="orgf4c1bba">Connections</h4>
+<div id="outline-container-orgeb5f9bc" class="outline-4">
+<h4 id="orgeb5f9bc">Connections</h4>
 </div>
 </div>
-<div id="outline-container-org352c6be" class="outline-3">
-<h3 id="org352c6be">Software</h3>
-<div class="outline-text-3" id="text-org352c6be">
+<div id="outline-container-org1a1cc3f" class="outline-3">
+<h3 id="org1a1cc3f">Software</h3>
+<div class="outline-text-3" id="text-org1a1cc3f">
 <p>
 The software to support this device is actually split up into two ROS nodes. The 
 first is located in I2C<sub>IMU</sub> and the other is in temp<sub>and</sub><sub>pressure</sub>. This Waveshare
@@ -514,21 +526,21 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </div>
 </div>
 </div>
-<div id="outline-container-orgfa8eb8d" class="outline-2">
-<h2 id="orgfa8eb8d">IMU</h2>
+<div id="outline-container-orge05b49e" class="outline-2">
+<h2 id="orge05b49e">IMU</h2>
 </div>
-<div id="outline-container-orgec84cd4" class="outline-2">
-<h2 id="orgec84cd4">Analog Sensors</h2>
+<div id="outline-container-orge1d7059" class="outline-2">
+<h2 id="orge1d7059">Analog Sensors</h2>
 </div>
-<div id="outline-container-org093af90" class="outline-2">
-<h2 id="org093af90">Digital Sensors</h2>
+<div id="outline-container-orgf9ce138" class="outline-2">
+<h2 id="orgf9ce138">Digital Sensors</h2>
 </div>
-<div id="outline-container-orge60e845" class="outline-2">
-<h2 id="orge60e845">4G LTE</h2>
+<div id="outline-container-org7796772" class="outline-2">
+<h2 id="org7796772">4G LTE</h2>
 </div>
-<div id="outline-container-orgd4166b2" class="outline-2">
-<h2 id="orgd4166b2">License</h2>
-<div class="outline-text-2" id="text-orgd4166b2">
+<div id="outline-container-org94264f4" class="outline-2">
+<h2 id="org94264f4">License</h2>
+<div class="outline-text-2" id="text-org94264f4">
 <p>
 The MIT License (MIT)
 </p>
@@ -565,7 +577,7 @@ SOFTWARE.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Forumula Embedded</p>
-<p class="date">Created: 2019-01-25 Fri 18:49</p>
+<p class="date">Created: 2019-01-25 Fri 21:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
