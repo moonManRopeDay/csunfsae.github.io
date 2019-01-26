@@ -21,20 +21,20 @@
 
 ** Where do I run this?
 
-  This software is based around [[http://www.ros.org][ROS]] and, is meant to be ran on an Nvidia
+  This software is based around [[http://www.ros.org][ROS]] and, is meant to run on an Nvidia
   Jetson Tx2. In addition to this SOC there are other sensors and boards 
   necessary to communicate with other parts of the system. For a full
-  parts list refer to the internal document found on the Google Drive.
+  parts list refer to the internal documention found on the Google Drive.
 
 ** FAQ
 *** Why ROS?
-    This is the most commonly asked question we get when we're asked by other
-    computer science students or engineers. The answer to that question is that
-    it provides an excellent means of inter-process communication so that multiple
-    processes written in different languages can communicate efficiently and reliably.
-    Additionally it's one of the most documented and well supported frameworks that plays
-    well with our hardware platform. Lastly it enables us to reuse software so we can focus
-    on adding features to our system without compromising its reliability. 
+    This is the most commonly asked question we get by other computer science 
+    students or engineers. The answer to that question is that it provides an excellent 
+    means of inter-process communication so that multiple processes written in different 
+    languages can communicate efficiently and reliably. Additionally it's one of the most 
+    documented and well supported frameworks that plays well with our hardware platform.
+    Lastly it enables us to reuse software so we can focus on adding features to our 
+    system without compromising its reliability. 
 *** Why the Nvidia Jetson?
     This was chosen with a couple of considerations in mind such as I/O availability, 
     flexibility, and speed. It provides all of the necessary means of communication 
@@ -48,14 +48,14 @@
     1. How maintainable each node will be in the future.
     2. How reusable each node will be in the future.
    
-   Understanding how ROS messages and processes are function is essential in making
+   Understanding how ROS messages and processes function is essential in making
    wise design decisions. Most people are quick to think that by eliminating ROS Nodes
-   will make the system more efficent however this isnt always the case. Additionally
-   it's important that design a system that more monolithic makes each node more 
+   the system will become more efficent however this isn't always the case. Additionally
+   it's important to keep in mind that a more monolithic system makes each node more 
    difficult to maintain and reduces the reusebility of the software (comp 380?).
    Therefore when looking to improve the system by either adding additional functionality
    or making improvements to performance it's important to make sure that each node performs
-   a single function (e.g. getting data from a single device and publishing its data). The 
+   only a single function (e.g. getting data from a single device and publishing its data). The 
    rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
    instead describe parts of the system refrencing ROS nodes along the way that handle 
    that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
