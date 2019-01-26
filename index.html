@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-01-25 Fri 16:56 -->
+<!-- 2019-01-25 Fri 18:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Org bootstrap document</title>
+<title>Formula Embedded Wiki</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Lars Tveito" />
+<meta name="author" content="Forumula Embedded" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -237,66 +237,195 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Org bootstrap document</h1>
+<h1 class="title">Formula Embedded Wiki</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8d5a799">About</a></li>
-<li><a href="#org46b69c5">Usage</a></li>
-<li><a href="#orgf59bec5">License</a></li>
-<li><a href="#org7f37b32">Test</a></li>
-<li><a href="#org94dc579">Peanut Butter</a></li>
-<li><a href="#org03bfbcf">This is another test</a></li>
+<li><a href="#org66f495e">About</a>
+<ul>
+<li><a href="#org9b0395d">What's the point of this?</a></li>
+<li><a href="#orgdc6fb32">Where do I run this?</a></li>
+<li><a href="#org2068ae5">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#org03a99b5">ROS</a>
+<ul>
+<li><a href="#orga1b2f63">ROS Layout</a></li>
+<li><a href="#org5421015">Development Philosophy</a></li>
+</ul>
+</li>
+<li><a href="#orgd8fbad1">Can Bus</a>
+<ul>
+<li><a href="#orgdb1ec9a">CAN Transceiver</a></li>
+<li><a href="#orgd39a9ac">Wiring</a></li>
+<li><a href="#orgea002b6">Software</a></li>
+</ul>
+</li>
+<li><a href="#org34a4e98">IMU</a></li>
+<li><a href="#org3c3ba78">Analog Sensors</a></li>
+<li><a href="#org9772b01">Digital Sensors</a></li>
+<li><a href="#org389cec4">4G LTE</a></li>
+<li><a href="#org7ffcf70">License</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8d5a799" class="outline-2">
-<h2 id="org8d5a799">About</h2>
-<div class="outline-text-2" id="text-org8d5a799">
-<p>
-This is a simple scheme for Org mode to generate nice and readable HTML
-sites. Here are some examples of sites that uses this scheme (all in
-Norwegian):
-</p>
-
-<ul class="org-ul">
-<li><a href="http://folk.uio.no/larstvei/inf2810/v15/">INF2810 - Gruppelærerenes side</a></li>
-<li><a href="http://folk.uio.no/larstvei/inf2810/v15/emacs-setup.html">Scheme i Emacs!</a></li>
-<li><a href="http://folk.uio.no/larstvei/inf2810/v15/veien-til-vakker-scheme.html">Veien Til Vakker Scheme</a></li>
-</ul>
+<div id="outline-container-org66f495e" class="outline-2">
+<h2 id="org66f495e">About</h2>
+<div class="outline-text-2" id="text-org66f495e">
 </div>
-</div>
-
-<div id="outline-container-org46b69c5" class="outline-2">
-<h2 id="org46b69c5">Usage</h2>
-<div class="outline-text-2" id="text-org46b69c5">
+<div id="outline-container-org9b0395d" class="outline-3">
+<h3 id="org9b0395d">What's the point of this?</h3>
+<div class="outline-text-3" id="text-org9b0395d">
 <p>
-The scheme consists of a series of CSS and JavaScript files located in the
-<code>css</code> and <code>js</code> directory. To use it, simply include the lines starting
-with <code>#+OPTIONS:</code> and <code>#+HTML_HEAD:</code> in the top of this file in an <code>.org</code>
-file. It assumes that the <code>.org</code> file is located in a directory like this
-repository, containing the <code>css</code> and <code>js</code> directories.
-</p>
-
-<p>
-If these conditions are met, one should be able to export the <code>.org</code> file
-to HTML using the <code>org-html-export-to-html</code> command, accessible by the key
-sequence <code>C-c C-e h h</code>.
+The purpose of this project is to provide both real time transmission of 
+sensor data from our formula style electric vehicle and local storage 
+for this data. In addition to collecting the data this project is also 
+meant to filter these data signals, interface to the motor controllers, 
+and provide support for future features such as active aerodynamics, traction 
+control, etc.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf59bec5" class="outline-2">
-<h2 id="orgf59bec5">License</h2>
-<div class="outline-text-2" id="text-orgf59bec5">
+<div id="outline-container-orgdc6fb32" class="outline-3">
+<h3 id="orgdc6fb32">Where do I run this?</h3>
+<div class="outline-text-3" id="text-orgdc6fb32">
+<p>
+This software is based around <a href="http://www.ros.org">ROS</a> and, is meant to be ran on an Nvidia
+Jetson Tx2. In addition to this SOC there are other sensors and boards 
+necessary to communicate with other parts of the system. For a full
+parts list refer to the internal document found on the Google Drive.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2068ae5" class="outline-3">
+<h3 id="org2068ae5">FAQ</h3>
+<div class="outline-text-3" id="text-org2068ae5">
+</div>
+<div id="outline-container-org8c8435f" class="outline-4">
+<h4 id="org8c8435f">Why ROS?</h4>
+<div class="outline-text-4" id="text-org8c8435f">
+<p>
+This is the most commonly asked question we get when we're asked by other
+computer science students or engineers. The answer to that question is that
+it provides an excellent means of inter-process communication so that multiple
+processes written in different languages can communicate efficiently and reliably.
+Additionally it's one of the most documented and well supported frameworks that plays
+well with our hardware platform. Lastly it enables us to reuse software so we can focus
+on adding features to our system without compromising its reliability. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgc3fd851" class="outline-4">
+<h4 id="orgc3fd851">Why the Nvidia Jetson?</h4>
+<div class="outline-text-4" id="text-orgc3fd851">
+<p>
+This was chosen with a couple of considerations in mind such as I/O availability, 
+flexibility, and speed. It provides all of the necessary means of communication 
+with our sensors and ECUs found on our electric vehicle.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org03a99b5" class="outline-2">
+<h2 id="org03a99b5">ROS</h2>
+<div class="outline-text-2" id="text-org03a99b5">
+</div>
+<div id="outline-container-orga1b2f63" class="outline-3">
+<h3 id="orga1b2f63">ROS Layout</h3>
+<div class="outline-text-3" id="text-orga1b2f63">
+
+<div class="figure">
+<p><img src="ROS/JetsonRoshtml_2019-01-25_18-04-50.png" alt="JetsonRoshtml_2019-01-25_18-04-50.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5421015" class="outline-3">
+<h3 id="org5421015">Development Philosophy</h3>
+<div class="outline-text-3" id="text-org5421015">
+<p>
+We keep a few things in mind when designing and implementing new ROS nodes.
+</p>
+<ol class="org-ol">
+<li>How maintainable each node will be in the future.</li>
+<li>How reusable each node will be in the future.</li>
+</ol>
+
+<p>
+Understanding how ROS messages and processes are function is essential in making
+wise design decisions. Most people are quick to think that by eliminating ROS Nodes
+will make the system more efficent however this isnt always the case. Additionally
+it's important that design a system that more monolithic makes each node more 
+difficult to maintain and reduces the reusebility of the software (comp 380?).
+Therefore when looking to improve the system by either adding additional functionality
+or making improvements to performance it's important to make sure that each node performs
+a single function (e.g. getting data from a single device and publishing its data). The 
+rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
+instead describe parts of the system refrencing ROS nodes along the way that handle 
+that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
+only person developing this so keep the next person informed.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd8fbad1" class="outline-2">
+<h2 id="orgd8fbad1">Can Bus</h2>
+<div class="outline-text-2" id="text-orgd8fbad1">
+</div>
+<div id="outline-container-orgdb1ec9a" class="outline-3">
+<h3 id="orgdb1ec9a">CAN Transceiver</h3>
+<div class="outline-text-3" id="text-orgdb1ec9a">
+
+<div class="figure">
+<p><img src="Can%20Bus/SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" alt="SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc17d2b6" class="outline-4">
+<h4 id="orgc17d2b6">SN65HVD230 CAN Board</h4>
+<div class="outline-text-4" id="text-orgc17d2b6">
+<p>
+Two Can Bus transceivers were used on this system. One was used
+to communicate to the Motor Controller Unit and the other was meant
+for future expansion. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd39a9ac" class="outline-3">
+<h3 id="orgd39a9ac">Wiring</h3>
+</div>
+<div id="outline-container-orgea002b6" class="outline-3">
+<h3 id="orgea002b6">Software</h3>
+</div>
+</div>
+<div id="outline-container-org34a4e98" class="outline-2">
+<h2 id="org34a4e98">IMU</h2>
+</div>
+<div id="outline-container-org3c3ba78" class="outline-2">
+<h2 id="org3c3ba78">Analog Sensors</h2>
+</div>
+<div id="outline-container-org9772b01" class="outline-2">
+<h2 id="org9772b01">Digital Sensors</h2>
+</div>
+<div id="outline-container-org389cec4" class="outline-2">
+<h2 id="org389cec4">4G LTE</h2>
+</div>
+<div id="outline-container-org7ffcf70" class="outline-2">
+<h2 id="org7ffcf70">License</h2>
+<div class="outline-text-2" id="text-org7ffcf70">
 <p>
 The MIT License (MIT)
 </p>
 
 <p>
-Copyright (c) 2015 Lars Tveito
+Copyright (c) 2019 CSUN Formula SAE
 </p>
 
 <p>
@@ -324,26 +453,10 @@ SOFTWARE.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org7f37b32" class="outline-2">
-<h2 id="org7f37b32">Test</h2>
-<div class="outline-text-2" id="text-org7f37b32">
-<p>
-This is a test 
-</p>
-</div>
-</div>
-
-<div id="outline-container-org94dc579" class="outline-2">
-<h2 id="org94dc579">Peanut Butter</h2>
-</div>
-<div id="outline-container-org03bfbcf" class="outline-2">
-<h2 id="org03bfbcf">This is another test</h2>
-</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Lars Tveito</p>
-<p class="date">Created: 2019-01-25 Fri 16:56</p>
+<p class="author">Author: Forumula Embedded</p>
+<p class="date">Created: 2019-01-25 Fri 18:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

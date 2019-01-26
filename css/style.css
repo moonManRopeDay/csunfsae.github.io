@@ -82,6 +82,10 @@ code{
     font-weight:500
 }
 
+img{
+    width: 60vw;
+}
+
 @media (min-width:992px){
 
 
