@@ -75,12 +75,12 @@
         | CAN_RX     | (J26 Header)  5 |
         | CAN_TX     | (J26 Header)  7 |
 *** Can Bus 1
-        | Device Pin | Jetson Pin      |
-        |------------|-----------------| 
-        | 3.3v       | (J21 Header) 17 |
-        | GND        | (J26 Header) 21 |
-        | CAN_RX     | (J26 Header) 15 |
-        | CAN_TX     | (J26 Header) 17 |
+        | Device Pin | Jetson Pin          |
+        |------------+---------------------|
+        | 3.3v       | **(J21 Header)** 17 |
+        | GND        | (J26 Header) 21     |
+        | CAN_RX     | (J26 Header) 15     |
+        | CAN_TX     | (J26 Header) 17     |
 *** J26 Header
 #+DOWNLOADED: file:///home/cristian/Desktop/J26_Header.png @ 2019-01-25 21:45:45
 [[file:Can%20Bus/J26_Header_2019-01-25_21-45-45.png]]
