@@ -11,6 +11,8 @@
 #+HTML_HEAD: <script type="text/javascript" src="js/org-bootstrap.js"></script>
 
 * About
+** Where's the code? 
+   Here: [[https://github.com/csunfsae/jetsonTx2][Github Repo]] 
 ** What's the point of this?
    The purpose of this project is to provide both real time transmission of 
    sensor data from our formula style electric vehicle and local storage 
