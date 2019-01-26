@@ -18,14 +18,11 @@
    meant to filter these data signals, interface to the motor controllers, 
    and provide support for future features such as active aerodynamics, traction 
    control, etc.
-
 ** Where do I run this?
-
   This software is based around [[http://www.ros.org][ROS]] and, is meant to run on an Nvidia
   Jetson Tx2. In addition to this SOC there are other sensors and boards 
   necessary to communicate with other parts of the system. For a full
   parts list refer to the internal documention found on the Google Drive.
-
 ** FAQ
 *** Why ROS?
     This is the most commonly asked question we get by other computer science 
@@ -68,19 +65,15 @@
     Two Can Bus transceivers were used on this system. One was used
     to communicate to the Motor Controller Unit and the other was meant
     for future expansion. 
-
 ** Wiring  
    - These transceivers are connected to the Jetson Tx2 using the J21 header.
-
-***  Can Bus 0
-
+*** Can Bus 0
         | Device Pin | Jetson Pin      |
         |------------|-----------------| 
         | 3.3v       | (J26 Header)  2 |
         | GND        | (J26 Header) 11 |
         | CAN_RX     | (J26 Header)  5 |
         | CAN_TX     | (J26 Header)  7 |
-
 *** Can Bus 1
         | Device Pin | Jetson Pin      |
         |------------|-----------------| 
@@ -88,22 +81,44 @@
         | GND        | (J26 Header) 21 |
         | CAN_RX     | (J26 Header) 15 |
         | CAN_TX     | (J26 Header) 17 |
-
-
-
-
-*** J21 Header
-*** Connections 
+*** J26 Header
+#+DOWNLOADED: file:///home/cristian/Desktop/J26_Header.png @ 2019-01-25 21:45:45
+[[file:Can%20Bus/J26_Header_2019-01-25_21-45-45.png]]
 ** Software
    The software to support this device is actually split up into two ROS nodes. The 
-   first is located in I2C_IMU and the other is in temp_and_pressure. This Waveshare
+   first is located in =I2C_IMU= and the other is in =temp_and_pressure=. This Waveshare
    device is actually composed to two separate devices the MPU-9255 and the BMP280
    which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
    gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
 * IMU
+** 10 DOF IMU
+#+DOWNLOADED: file:///home/cristian/Desktop/10-DOF-IMU-Sensor-C-intro.jpg @ 2019-01-25 21:53:03
+[[file:IMU/10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg]]
+*** Waveshare 10 DOF IMU (C) 
+    This sensor was chosen as it's directly compatible with the jetson via I2C. It currently
+    is installed on I2C bus 1. This is made up of both the MPU-9255 (gyro, accel, compass) and 
+    the BMP280 (pressure sensor).
+** Wiring
+*** I2C BUS 1 
+        | Device Pin | Jetson Pin      |
+        |------------|-----------------| 
+        | 3.3v       | (J26 Header)  2 |
+        | GND        | (J26 Header) 11 |
+        | CAN_RX     | (J26 Header)  5 |
+        | CAN_TX     | (J26 Header)  7 |
+** Software
 * Analog Sensors
+** Analog to Digital Converter
+#+DOWNLOADED: file:///home/cristian/Desktop/NCD_A_TO_D.png @ 2019-01-25 21:57:52
+[[file:Analog%20Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png]]
+*** NCD 16 Analog to Digital Converter 
+
 * Digital Sensors
 * 4G LTE
+** 4G Modem
+#+DOWNLOADED: file:///home/cristian/Desktop/4G_LTE.png @ 2019-01-25 22:00:07
+[[file:4G%20LTE/4G_LTE_2019-01-25_22-00-07.png]]
+*** Sierra Wireless MC7455
 * License
 
   The MIT License (MIT)
@@ -128,3 +143,4 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 
+  
