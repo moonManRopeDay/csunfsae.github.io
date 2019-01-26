@@ -59,6 +59,19 @@
    instead describe parts of the system refrencing ROS nodes along the way that handle 
    that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
    only person developing this so keep the next person informed.
+** How to get started running ROS?
+   This part of the wiki will assume you have a working OS running with all of the necessary
+   kernel modules enabled in order to interface with the appropriate hardware. For a guide on
+   this sort of stuff look at the "Helpful Links" part of the wiki. Additionally at the time 
+   of writing this wiki 26 January 2019 all of our nodes, services, etc. are based off of the
+   **ROS Melodic Morenia** release. 
+*** How do I install all the necessary ROS packages?
+    - **See the helpful links section on installing ROS on the tx2**
+    - Otherwise a not so helpful link to get started can be found here:[[http://wiki.ros.org/melodic][ DIY Installation]]
+*** How do I use Nodejs ROS nodes? 
+    - Make sure node is installed. See helpful links.
+    - Make sure your Node modules are installed.
+    - Check that your CMakeList includes your node files. See helpful links.
 * Can Bus  
 ** CAN Transceiver
 #+DOWNLOADED: file:///home/cristian/Downloads/SN65HVD230-CAN-Board-2.jpg @ 2019-01-25 18:22:08
@@ -68,7 +81,7 @@
     to communicate to the Motor Controller Unit and the other was meant
     for future expansion. 
 ** Wiring  
-   - These transceivers are connected to the Jetson Tx2 using the J21 header.
+   - These transceivers are connected to the Jetson Tx2 using the J26 header.
 *** Can Bus 0
         | Device Pin | Jetson Pin      |
         |------------|-----------------| 
@@ -87,11 +100,11 @@
 #+DOWNLOADED: file:///home/cristian/Desktop/J26_Header.png @ 2019-01-25 21:45:45
 [[file:Can%20Bus/J26_Header_2019-01-25_21-45-45.png]]
 ** Software
-   The software to support this device is actually split up into two ROS nodes. The 
-   first is located in =I2C_IMU= and the other is in =temp_and_pressure=. This Waveshare
-   device is actually composed to two separate devices the MPU-9255 and the BMP280
-   which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
-   gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
+   The software used to interact with the MCU is held in the ROS node titled =CAN_COMMUNICATION=.
+   This node is responsible from sending and receiving messages from the MCU (Motor Control Unit)
+   via the 5 pin Can Bus port on the Unitek motor controller. This Node receives messages from the 
+   web based node and will publish data to both the web node responsible from telemetry and the node
+   which handles storing data into Sqlite.
 * IMU
 ** 10 DOF IMU
 #+DOWNLOADED: file:///home/cristian/Desktop/10-DOF-IMU-Sensor-C-intro.jpg @ 2019-01-25 21:53:03
@@ -108,7 +121,15 @@
         | GND        | (J26 Header) 11 |
         | CAN_RX     | (J26 Header)  5 |
         | CAN_TX     | (J26 Header)  7 |
+*** J21 Header
+#+DOWNLOADED: file:///home/cristian/Downloads/J21_Pinout.png @ 2019-01-26 13:01:22
+[[file:IMU/J21_Pinout_2019-01-26_13-01-22.png]]
 ** Software
+   The software to support this device is actually split up into two ROS nodes. The 
+   first is located in =I2C_IMU= and the other is in =temp_and_pressure=. This Waveshare
+   device is actually composed to two separate devices the MPU-9255 and the BMP280
+   which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
+   gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
 * Analog Sensors
 ** Analog to Digital Converter
 #+DOWNLOADED: file:///home/cristian/Desktop/NCD_A_TO_D.png @ 2019-01-25 21:57:52
@@ -121,6 +142,12 @@
 #+DOWNLOADED: file:///home/cristian/Desktop/4G_LTE.png @ 2019-01-25 22:00:07
 [[file:4G%20LTE/4G_LTE_2019-01-25_22-00-07.png]]
 *** Sierra Wireless MC7455
+* Helpful Links
+  - [[https://www.jetsonhacks.com/2017/03/25/build-kernel-and-modules-nvidia-jetson-tx2/][How to recompile the kernel to get new kernel modules aka drivers.]]
+  - [[https://www.jetsonhacks.com/2017/03/21/jetpack-3-0-nvidia-jetson-tx2-development-kit/][How to reinstall the jetpack.]]
+  - [[https://www.jetsonhacks.com/2017/03/27/robot-operating-system-ros-nvidia-jetson-tx2/][How to install ROS on the Tx2.]] 
+  - [[https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages][How to install Nodejs.]] 
+  - [[http://wiki.ros.org/rosnodejs][How to ROS your Nodejs.]] 
 * License
 
   The MIT License (MIT)
@@ -146,3 +173,4 @@
   SOFTWARE.
 
   
+
