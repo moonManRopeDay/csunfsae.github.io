@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-01-26 Sat 13:35 -->
+<!-- 2019-01-26 Sat 19:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Formula Embedded Wiki</title>
@@ -242,67 +242,70 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0766af0">About</a>
+<li><a href="#org66143e6">About</a>
 <ul>
-<li><a href="#org2989cbc">Where's the code?</a></li>
-<li><a href="#org957a4c4">What's the point of this?</a></li>
-<li><a href="#org61d494f">Where do I run this?</a></li>
-<li><a href="#orgb5e7b78">FAQ</a></li>
+<li><a href="#orgb34ee42">Where's the code?</a></li>
+<li><a href="#org3613b05">What's the point of this?</a></li>
+<li><a href="#orgd8811c8">Where do I run this?</a></li>
+<li><a href="#org55a25b7">FAQ</a></li>
 </ul>
 </li>
-<li><a href="#org3d64e66">ROS</a>
+<li><a href="#orgdc17b8d">ROS</a>
 <ul>
-<li><a href="#org9cd5c4b">ROS Layout</a></li>
-<li><a href="#orgbee526c">Development Philosophy</a></li>
-<li><a href="#org0bd081f">How to get started running ROS?</a></li>
+<li><a href="#org4241d1e">ROS Layout</a></li>
+<li><a href="#org760faf5">Development Philosophy</a></li>
+<li><a href="#orge330d86">How to get started running ROS?</a></li>
 </ul>
 </li>
-<li><a href="#orgda3fcfc">Can Bus</a>
+<li><a href="#orge406b38">Can Bus</a>
 <ul>
-<li><a href="#orgee76ad2">CAN Transceiver</a></li>
-<li><a href="#org2cf0044">Wiring</a></li>
-<li><a href="#org1988ba0">Software</a></li>
+<li><a href="#org2ef2b60">CAN Transceiver</a></li>
+<li><a href="#orgcceb59b">Wiring</a></li>
+<li><a href="#org23aeef0">Software</a></li>
 </ul>
 </li>
-<li><a href="#org6b95049">IMU</a>
+<li><a href="#org973f1a4">IMU</a>
 <ul>
-<li><a href="#org93bf48d">10 DOF IMU</a></li>
-<li><a href="#orgb41d9ec">Wiring</a></li>
-<li><a href="#orgf159429">Software</a></li>
+<li><a href="#org4ca2891">10 DOF IMU</a></li>
+<li><a href="#orgf86c66b">Wiring</a></li>
+<li><a href="#orgfb1b82b">Software</a></li>
 </ul>
 </li>
-<li><a href="#orgeab2a5f">Analog Sensors</a>
+<li><a href="#orgec59d57">Analog Sensors</a>
 <ul>
-<li><a href="#org9032cda">Analog to Digital Converter</a></li>
+<li><a href="#orgb0ef201">Analog to Digital Converter</a></li>
+<li><a href="#org72c5066">Wiring</a></li>
+<li><a href="#org3e3f54d">Software</a></li>
 </ul>
 </li>
-<li><a href="#org33e9b60">Digital Sensors</a></li>
-<li><a href="#org23ebd5f">4G LTE</a>
+<li><a href="#orgfb52e00">Digital Sensors</a></li>
+<li><a href="#org4e4ee93">4G LTE</a>
 <ul>
-<li><a href="#org6d0b974">4G Modem</a></li>
+<li><a href="#orgf1801c4">4G Modem</a></li>
 </ul>
 </li>
-<li><a href="#org7019017">Helpful Links</a></li>
-<li><a href="#org875cf33">License</a></li>
+<li><a href="#orgd9847f0">J21/J26 Pinout</a></li>
+<li><a href="#org49cabd5">Helpful Links</a></li>
+<li><a href="#orgbf17da1">License</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0766af0" class="outline-2">
-<h2 id="org0766af0">About</h2>
-<div class="outline-text-2" id="text-org0766af0">
+<div id="outline-container-org66143e6" class="outline-2">
+<h2 id="org66143e6">About</h2>
+<div class="outline-text-2" id="text-org66143e6">
 </div>
-<div id="outline-container-org2989cbc" class="outline-3">
-<h3 id="org2989cbc">Where's the code?</h3>
-<div class="outline-text-3" id="text-org2989cbc">
+<div id="outline-container-orgb34ee42" class="outline-3">
+<h3 id="orgb34ee42">Where's the code?</h3>
+<div class="outline-text-3" id="text-orgb34ee42">
 <p>
 Here: <a href="https://github.com/csunfsae/jetsonTx2">Github Repo</a> 
 </p>
 </div>
 </div>
-<div id="outline-container-org957a4c4" class="outline-3">
-<h3 id="org957a4c4">What's the point of this?</h3>
-<div class="outline-text-3" id="text-org957a4c4">
+<div id="outline-container-org3613b05" class="outline-3">
+<h3 id="org3613b05">What's the point of this?</h3>
+<div class="outline-text-3" id="text-org3613b05">
 <p>
 The purpose of this project is to provide both real time transmission of 
 sensor data from our formula style electric vehicle and local storage 
@@ -313,9 +316,9 @@ control, etc.
 </p>
 </div>
 </div>
-<div id="outline-container-org61d494f" class="outline-3">
-<h3 id="org61d494f">Where do I run this?</h3>
-<div class="outline-text-3" id="text-org61d494f">
+<div id="outline-container-orgd8811c8" class="outline-3">
+<h3 id="orgd8811c8">Where do I run this?</h3>
+<div class="outline-text-3" id="text-orgd8811c8">
 <p>
 This software is based around <a href="http://www.ros.org">ROS</a> and, is meant to run on an Nvidia
 Jetson Tx2. In addition to this SOC there are other sensors and boards 
@@ -324,13 +327,13 @@ parts list refer to the internal documention found on the Google Drive.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb5e7b78" class="outline-3">
-<h3 id="orgb5e7b78">FAQ</h3>
-<div class="outline-text-3" id="text-orgb5e7b78">
+<div id="outline-container-org55a25b7" class="outline-3">
+<h3 id="org55a25b7">FAQ</h3>
+<div class="outline-text-3" id="text-org55a25b7">
 </div>
-<div id="outline-container-orgc7d9813" class="outline-4">
-<h4 id="orgc7d9813">Why ROS?</h4>
-<div class="outline-text-4" id="text-orgc7d9813">
+<div id="outline-container-org24f429f" class="outline-4">
+<h4 id="org24f429f">Why ROS?</h4>
+<div class="outline-text-4" id="text-org24f429f">
 <p>
 This is the most commonly asked question we get by other computer science 
 students or engineers. The answer to that question is that it provides an excellent 
@@ -342,9 +345,9 @@ system without compromising its reliability.
 </p>
 </div>
 </div>
-<div id="outline-container-org466ca84" class="outline-4">
-<h4 id="org466ca84">Why the Nvidia Jetson?</h4>
-<div class="outline-text-4" id="text-org466ca84">
+<div id="outline-container-orgecb7964" class="outline-4">
+<h4 id="orgecb7964">Why the Nvidia Jetson?</h4>
+<div class="outline-text-4" id="text-orgecb7964">
 <p>
 This was chosen with a couple of considerations in mind such as I/O availability, 
 flexibility, and speed. It provides all of the necessary means of communication 
@@ -354,13 +357,13 @@ with our sensors and ECUs found on our electric vehicle.
 </div>
 </div>
 </div>
-<div id="outline-container-org3d64e66" class="outline-2">
-<h2 id="org3d64e66">ROS</h2>
-<div class="outline-text-2" id="text-org3d64e66">
+<div id="outline-container-orgdc17b8d" class="outline-2">
+<h2 id="orgdc17b8d">ROS</h2>
+<div class="outline-text-2" id="text-orgdc17b8d">
 </div>
-<div id="outline-container-org9cd5c4b" class="outline-3">
-<h3 id="org9cd5c4b">ROS Layout</h3>
-<div class="outline-text-3" id="text-org9cd5c4b">
+<div id="outline-container-org4241d1e" class="outline-3">
+<h3 id="org4241d1e">ROS Layout</h3>
+<div class="outline-text-3" id="text-org4241d1e">
 
 <div class="figure">
 <p><img src="ROS/JetsonRoshtml_2019-01-25_18-04-50.png" alt="JetsonRoshtml_2019-01-25_18-04-50.png" />
@@ -368,9 +371,9 @@ with our sensors and ECUs found on our electric vehicle.
 </div>
 </div>
 </div>
-<div id="outline-container-orgbee526c" class="outline-3">
-<h3 id="orgbee526c">Development Philosophy</h3>
-<div class="outline-text-3" id="text-orgbee526c">
+<div id="outline-container-org760faf5" class="outline-3">
+<h3 id="org760faf5">Development Philosophy</h3>
+<div class="outline-text-3" id="text-org760faf5">
 <p>
 We keep a few things in mind when designing and implementing new ROS nodes.
 </p>
@@ -395,9 +398,9 @@ only person developing this so keep the next person informed.
 </p>
 </div>
 </div>
-<div id="outline-container-org0bd081f" class="outline-3">
-<h3 id="org0bd081f">How to get started running ROS?</h3>
-<div class="outline-text-3" id="text-org0bd081f">
+<div id="outline-container-orge330d86" class="outline-3">
+<h3 id="orge330d86">How to get started running ROS?</h3>
+<div class="outline-text-3" id="text-orge330d86">
 <p>
 This part of the wiki will assume you have a working OS running with all of the necessary
 kernel modules enabled in order to interface with the appropriate hardware. For a guide on
@@ -406,18 +409,18 @@ of writing this wiki 26 January 2019 all of our nodes, services, etc. are based 
 <b><b>ROS Melodic Morenia</b></b> release. 
 </p>
 </div>
-<div id="outline-container-orge21ba7f" class="outline-4">
-<h4 id="orge21ba7f">How do I install all the necessary ROS packages?</h4>
-<div class="outline-text-4" id="text-orge21ba7f">
+<div id="outline-container-org40beadf" class="outline-4">
+<h4 id="org40beadf">How do I install all the necessary ROS packages?</h4>
+<div class="outline-text-4" id="text-org40beadf">
 <ul class="org-ul">
 <li><b><b>See the helpful links section on installing ROS on the tx2</b></b></li>
 <li>Otherwise a not so helpful link to get started can be found here:<a href="http://wiki.ros.org/melodic"> DIY Installation</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org17ad0b7" class="outline-4">
-<h4 id="org17ad0b7">How do I use Nodejs ROS nodes?</h4>
-<div class="outline-text-4" id="text-org17ad0b7">
+<div id="outline-container-org8ba37bd" class="outline-4">
+<h4 id="org8ba37bd">How do I use Nodejs ROS nodes?</h4>
+<div class="outline-text-4" id="text-org8ba37bd">
 <ul class="org-ul">
 <li>Make sure node is installed. See helpful links.</li>
 <li>Make sure your Node modules are installed.</li>
@@ -425,9 +428,9 @@ of writing this wiki 26 January 2019 all of our nodes, services, etc. are based 
 </ul>
 </div>
 </div>
-<div id="outline-container-org6326955" class="outline-4">
-<h4 id="org6326955">How do I compile my code?</h4>
-<div class="outline-text-4" id="text-org6326955">
+<div id="outline-container-org73a4921" class="outline-4">
+<h4 id="org73a4921">How do I compile my code?</h4>
+<div class="outline-text-4" id="text-org73a4921">
 <ol class="org-ol">
 <li>Make sure the CMakeList File is correctly configured.</li>
 <li>Make sure you <code>$ source devel/setup.bash</code> from the <code>catkin_ws</code> directory of the project.</li>
@@ -436,9 +439,9 @@ of writing this wiki 26 January 2019 all of our nodes, services, etc. are based 
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd7d1797" class="outline-4">
-<h4 id="orgd7d1797">How do I run my code?</h4>
-<div class="outline-text-4" id="text-orgd7d1797">
+<div id="outline-container-orgfeae145" class="outline-4">
+<h4 id="orgfeae145">How do I run my code?</h4>
+<div class="outline-text-4" id="text-orgfeae145">
 <p>
 Prereq: <b>*Always run <code>$ source devel/setup.bash</code> from <code>catkin_ws</code> *</b>
 </p>
@@ -448,9 +451,9 @@ Prereq: <b>*Always run <code>$ source devel/setup.bash</code> from <code>catkin_
 </ol>
 </div>
 </div>
-<div id="outline-container-org0e47434" class="outline-4">
-<h4 id="org0e47434">I'm tired of running each process one by one!</h4>
-<div class="outline-text-4" id="text-org0e47434">
+<div id="outline-container-org1fdadc1" class="outline-4">
+<h4 id="org1fdadc1">I'm tired of running each process one by one!</h4>
+<div class="outline-text-4" id="text-org1fdadc1">
 <p>
 You'll have to write your own roslaunch file. Be sure to consult the helpful links but here a quick explanation.
 </p>
@@ -459,23 +462,22 @@ You'll have to write your own roslaunch file. Be sure to consult the helpful lin
 </div>
 </div>
 
-
-<div id="outline-container-orgda3fcfc" class="outline-2">
-<h2 id="orgda3fcfc">Can Bus</h2>
-<div class="outline-text-2" id="text-orgda3fcfc">
+<div id="outline-container-orge406b38" class="outline-2">
+<h2 id="orge406b38">Can Bus</h2>
+<div class="outline-text-2" id="text-orge406b38">
 </div>
-<div id="outline-container-orgee76ad2" class="outline-3">
-<h3 id="orgee76ad2">CAN Transceiver</h3>
-<div class="outline-text-3" id="text-orgee76ad2">
+<div id="outline-container-org2ef2b60" class="outline-3">
+<h3 id="org2ef2b60">CAN Transceiver</h3>
+<div class="outline-text-3" id="text-org2ef2b60">
 
 <div class="figure">
 <p><img src="Can%20Bus/SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" alt="SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" />
 </p>
 </div>
 </div>
-<div id="outline-container-orgb091e56" class="outline-4">
-<h4 id="orgb091e56">SN65HVD230 CAN Board</h4>
-<div class="outline-text-4" id="text-orgb091e56">
+<div id="outline-container-org2b13d27" class="outline-4">
+<h4 id="org2b13d27">SN65HVD230 CAN Board</h4>
+<div class="outline-text-4" id="text-org2b13d27">
 <p>
 Two Can Bus transceivers were used on this system. One was used
 to communicate to the Motor Controller Unit and the other was meant
@@ -484,16 +486,17 @@ for future expansion.
 </div>
 </div>
 </div>
-<div id="outline-container-org2cf0044" class="outline-3">
-<h3 id="org2cf0044">Wiring</h3>
-<div class="outline-text-3" id="text-org2cf0044">
+<div id="outline-container-orgcceb59b" class="outline-3">
+<h3 id="orgcceb59b">Wiring</h3>
+<div class="outline-text-3" id="text-orgcceb59b">
 <ul class="org-ul">
 <li>These transceivers are connected to the Jetson Tx2 using the J26 header.</li>
+<li>See <code>J21/J26 Pinout</code> section for pinout images</li>
 </ul>
 </div>
-<div id="outline-container-org7d5642b" class="outline-4">
-<h4 id="org7d5642b">Can Bus 0</h4>
-<div class="outline-text-4" id="text-org7d5642b">
+<div id="outline-container-org0d048b1" class="outline-4">
+<h4 id="org0d048b1">Can Bus 0</h4>
+<div class="outline-text-4" id="text-org0d048b1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -532,9 +535,9 @@ for future expansion.
 </table>
 </div>
 </div>
-<div id="outline-container-org1fb7642" class="outline-4">
-<h4 id="org1fb7642">Can Bus 1</h4>
-<div class="outline-text-4" id="text-org1fb7642">
+<div id="outline-container-org85218b7" class="outline-4">
+<h4 id="org85218b7">Can Bus 1</h4>
+<div class="outline-text-4" id="text-org85218b7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -573,20 +576,10 @@ for future expansion.
 </table>
 </div>
 </div>
-<div id="outline-container-orgb9a3abc" class="outline-4">
-<h4 id="orgb9a3abc">J26 Header</h4>
-<div class="outline-text-4" id="text-orgb9a3abc">
-
-<div class="figure">
-<p><img src="Can%20Bus/J26_Header_2019-01-25_21-45-45.png" alt="J26_Header_2019-01-25_21-45-45.png" />
-</p>
 </div>
-</div>
-</div>
-</div>
-<div id="outline-container-org1988ba0" class="outline-3">
-<h3 id="org1988ba0">Software</h3>
-<div class="outline-text-3" id="text-org1988ba0">
+<div id="outline-container-org23aeef0" class="outline-3">
+<h3 id="org23aeef0">Software</h3>
+<div class="outline-text-3" id="text-org23aeef0">
 <p>
 The software used to interact with the MCU is held in the ROS node titled <code>CAN_COMMUNICATION</code>.
 This node is responsible from sending and receiving messages from the MCU (Motor Control Unit)
@@ -597,22 +590,22 @@ which handles storing data into Sqlite.
 </div>
 </div>
 </div>
-<div id="outline-container-org6b95049" class="outline-2">
-<h2 id="org6b95049">IMU</h2>
-<div class="outline-text-2" id="text-org6b95049">
+<div id="outline-container-org973f1a4" class="outline-2">
+<h2 id="org973f1a4">IMU</h2>
+<div class="outline-text-2" id="text-org973f1a4">
 </div>
-<div id="outline-container-org93bf48d" class="outline-3">
-<h3 id="org93bf48d">10 DOF IMU</h3>
-<div class="outline-text-3" id="text-org93bf48d">
+<div id="outline-container-org4ca2891" class="outline-3">
+<h3 id="org4ca2891">10 DOF IMU</h3>
+<div class="outline-text-3" id="text-org4ca2891">
 
 <div class="figure">
 <p><img src="IMU/10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg" alt="10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg" />
 </p>
 </div>
 </div>
-<div id="outline-container-orgddd3111" class="outline-4">
-<h4 id="orgddd3111">Waveshare 10 DOF IMU (C)</h4>
-<div class="outline-text-4" id="text-orgddd3111">
+<div id="outline-container-orga2d09f6" class="outline-4">
+<h4 id="orga2d09f6">Waveshare 10 DOF IMU (C)</h4>
+<div class="outline-text-4" id="text-orga2d09f6">
 <p>
 This sensor was chosen as it's directly compatible with the jetson via I2C. It currently
 is installed on I2C bus 1. This is made up of both the MPU-9255 (gyro, accel, compass) and 
@@ -621,13 +614,16 @@ the BMP280 (pressure sensor).
 </div>
 </div>
 </div>
-<div id="outline-container-orgb41d9ec" class="outline-3">
-<h3 id="orgb41d9ec">Wiring</h3>
-<div class="outline-text-3" id="text-orgb41d9ec">
+<div id="outline-container-orgf86c66b" class="outline-3">
+<h3 id="orgf86c66b">Wiring</h3>
+<div class="outline-text-3" id="text-orgf86c66b">
+<ul class="org-ul">
+<li>See <code>J21/J26 Pinout</code> section for pinout images</li>
+</ul>
 </div>
-<div id="outline-container-org492c8dd" class="outline-4">
-<h4 id="org492c8dd">I2C BUS 1</h4>
-<div class="outline-text-4" id="text-org492c8dd">
+<div id="outline-container-orga97cc95" class="outline-4">
+<h4 id="orga97cc95">I2C BUS 1</h4>
+<div class="outline-text-4" id="text-orga97cc95">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -644,42 +640,43 @@ the BMP280 (pressure sensor).
 </thead>
 <tbody>
 <tr>
-<td class="org-left">3.3v</td>
-<td class="org-left">(J26 Header)  2</td>
+<td class="org-left">VCC 5v</td>
+<td class="org-left">(J21 Header)  2</td>
 </tr>
 
 <tr>
 <td class="org-left">GND</td>
-<td class="org-left">(J26 Header) 11</td>
+<td class="org-left">(J21 Header)  6</td>
 </tr>
 
 <tr>
-<td class="org-left">CAN<sub>RX</sub></td>
-<td class="org-left">(J26 Header)  5</td>
+<td class="org-left">SDA</td>
+<td class="org-left">(J21 Header)  3</td>
 </tr>
 
 <tr>
-<td class="org-left">CAN<sub>TX</sub></td>
-<td class="org-left">(J26 Header)  7</td>
+<td class="org-left">SCL</td>
+<td class="org-left">(J21 Header)  5</td>
+</tr>
+
+<tr>
+<td class="org-left">INT</td>
+<td class="org-left">NOT USED</td>
+</tr>
+
+<tr>
+<td class="org-left">FSYNC</td>
+<td class="org-left">NOT USED</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="outline-container-orgb6f1280" class="outline-4">
-<h4 id="orgb6f1280">J21 Header</h4>
-<div class="outline-text-4" id="text-orgb6f1280">
+</div>
 
-<div class="figure">
-<p><img src="IMU/J21_Pinout_2019-01-26_13-01-22.png" alt="J21_Pinout_2019-01-26_13-01-22.png" />
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-orgf159429" class="outline-3">
-<h3 id="orgf159429">Software</h3>
-<div class="outline-text-3" id="text-orgf159429">
+<div id="outline-container-orgfb1b82b" class="outline-3">
+<h3 id="orgfb1b82b">Software</h3>
+<div class="outline-text-3" id="text-orgfb1b82b">
 <p>
 The software to support this device is actually split up into two ROS nodes. The 
 first is located in <code>I2C_IMU</code> and the other is in <code>temp_and_pressure</code>. This Waveshare
@@ -690,49 +687,126 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </div>
 </div>
 </div>
-<div id="outline-container-orgeab2a5f" class="outline-2">
-<h2 id="orgeab2a5f">Analog Sensors</h2>
-<div class="outline-text-2" id="text-orgeab2a5f">
+<div id="outline-container-orgec59d57" class="outline-2">
+<h2 id="orgec59d57">Analog Sensors</h2>
+<div class="outline-text-2" id="text-orgec59d57">
 </div>
-<div id="outline-container-org9032cda" class="outline-3">
-<h3 id="org9032cda">Analog to Digital Converter</h3>
-<div class="outline-text-3" id="text-org9032cda">
+<div id="outline-container-orgb0ef201" class="outline-3">
+<h3 id="orgb0ef201">Analog to Digital Converter</h3>
+<div class="outline-text-3" id="text-orgb0ef201">
 
 <div class="figure">
 <p><img src="Analog%20Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png" alt="NCD_A_TO_D_2019-01-25_21-57-52.png" />
 </p>
 </div>
 </div>
-<div id="outline-container-org674f368" class="outline-4">
-<h4 id="org674f368">NCD 16 Analog to Digital Converter</h4>
+<div id="outline-container-org823b1d4" class="outline-4">
+<h4 id="org823b1d4">NCD 16 Analog to Digital Converter</h4>
 </div>
+</div>
+<div id="outline-container-org72c5066" class="outline-3">
+<h3 id="org72c5066">Wiring</h3>
+<div class="outline-text-3" id="text-org72c5066">
+<ul class="org-ul">
+<li>See <code>J21/J26 Pinout</code> section for pinout images</li>
+</ul>
+</div>
+<div id="outline-container-org2b4bc3e" class="outline-4">
+<h4 id="org2b4bc3e">I2C BUS 0</h4>
+<div class="outline-text-4" id="text-org2b4bc3e">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Device Pin</th>
+<th scope="col" class="org-left">Jetson Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">GND</td>
+<td class="org-left">(J21 Header)  6</td>
+</tr>
+
+<tr>
+<td class="org-left">VCC 5v</td>
+<td class="org-left">(J21 Header)  2</td>
+</tr>
+
+<tr>
+<td class="org-left">SDA</td>
+<td class="org-left">(J21 Header)  3</td>
+</tr>
+
+<tr>
+<td class="org-left">SCL</td>
+<td class="org-left">(J21 Header)  5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org3e3f54d" class="outline-3">
+<h3 id="org3e3f54d">Software</h3>
 </div>
 </div>
 
-<div id="outline-container-org33e9b60" class="outline-2">
-<h2 id="org33e9b60">Digital Sensors</h2>
+<div id="outline-container-orgfb52e00" class="outline-2">
+<h2 id="orgfb52e00">Digital Sensors</h2>
 </div>
-<div id="outline-container-org23ebd5f" class="outline-2">
-<h2 id="org23ebd5f">4G LTE</h2>
-<div class="outline-text-2" id="text-org23ebd5f">
+<div id="outline-container-org4e4ee93" class="outline-2">
+<h2 id="org4e4ee93">4G LTE</h2>
+<div class="outline-text-2" id="text-org4e4ee93">
 </div>
-<div id="outline-container-org6d0b974" class="outline-3">
-<h3 id="org6d0b974">4G Modem</h3>
-<div class="outline-text-3" id="text-org6d0b974">
+<div id="outline-container-orgf1801c4" class="outline-3">
+<h3 id="orgf1801c4">4G Modem</h3>
+<div class="outline-text-3" id="text-orgf1801c4">
 
 <div class="figure">
 <p><img src="4G%20LTE/4G_LTE_2019-01-25_22-00-07.png" alt="4G_LTE_2019-01-25_22-00-07.png" />
 </p>
 </div>
 </div>
-<div id="outline-container-org05f9940" class="outline-4">
-<h4 id="org05f9940">Sierra Wireless MC7455</h4>
+<div id="outline-container-orgd0afa99" class="outline-4">
+<h4 id="orgd0afa99">Sierra Wireless MC7455</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org7019017" class="outline-2">
-<h2 id="org7019017">Helpful Links</h2>
-<div class="outline-text-2" id="text-org7019017">
+<div id="outline-container-orgd9847f0" class="outline-2">
+<h2 id="orgd9847f0">J21/J26 Pinout</h2>
+<div class="outline-text-2" id="text-orgd9847f0">
+</div>
+<div id="outline-container-org3296739" class="outline-4">
+<h4 id="org3296739">J21 Header</h4>
+<div class="outline-text-4" id="text-org3296739">
+
+<div class="figure">
+<p><img src="IMU/J21_Pinout_2019-01-26_13-01-22.png" alt="J21_Pinout_2019-01-26_13-01-22.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9844569" class="outline-4">
+<h4 id="org9844569">J26 Header</h4>
+<div class="outline-text-4" id="text-org9844569">
+
+<div class="figure">
+<p><img src="Can%20Bus/J26_Header_2019-01-25_21-45-45.png" alt="J26_Header_2019-01-25_21-45-45.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org49cabd5" class="outline-2">
+<h2 id="org49cabd5">Helpful Links</h2>
+<div class="outline-text-2" id="text-org49cabd5">
 <ul class="org-ul">
 <li><a href="https://www.jetsonhacks.com/2017/03/25/build-kernel-and-modules-nvidia-jetson-tx2/">How to recompile the kernel to get new kernel modules aka drivers.</a></li>
 <li><a href="https://www.jetsonhacks.com/2017/03/21/jetpack-3-0-nvidia-jetson-tx2-development-kit/">How to reinstall the jetpack.</a></li>
@@ -745,9 +819,9 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </ul>
 </div>
 </div>
-<div id="outline-container-org875cf33" class="outline-2">
-<h2 id="org875cf33">License</h2>
-<div class="outline-text-2" id="text-org875cf33">
+<div id="outline-container-orgbf17da1" class="outline-2">
+<h2 id="orgbf17da1">License</h2>
+<div class="outline-text-2" id="text-orgbf17da1">
 <p>
 The MIT License (MIT)
 </p>
@@ -784,7 +858,7 @@ SOFTWARE.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Forumula Embedded</p>
-<p class="date">Created: 2019-01-26 Sat 13:35</p>
+<p class="date">Created: 2019-01-26 Sat 19:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -84,7 +84,6 @@
 *** I'm tired of running each process one by one! 
     You'll have to write your own roslaunch file. Be sure to consult the helpful links but here a quick explanation.
 
-
 * Can Bus  
 ** CAN Transceiver
 #+DOWNLOADED: file:///home/cristian/Downloads/SN65HVD230-CAN-Board-2.jpg @ 2019-01-25 18:22:08
@@ -95,6 +94,7 @@
     for future expansion. 
 ** Wiring  
    - These transceivers are connected to the Jetson Tx2 using the J26 header.
+   - See =J21/J26 Pinout= section for pinout images
 *** Can Bus 0
         | Device Pin | Jetson Pin      |
         |------------|-----------------| 
@@ -109,9 +109,6 @@
         | GND        | (J26 Header) 21     |
         | CAN_RX     | (J26 Header) 15     |
         | CAN_TX     | (J26 Header) 17     |
-*** J26 Header
-#+DOWNLOADED: file:///home/cristian/Desktop/J26_Header.png @ 2019-01-25 21:45:45
-[[file:Can%20Bus/J26_Header_2019-01-25_21-45-45.png]]
 ** Software
    The software used to interact with the MCU is held in the ROS node titled =CAN_COMMUNICATION=.
    This node is responsible from sending and receiving messages from the MCU (Motor Control Unit)
@@ -127,16 +124,17 @@
     is installed on I2C bus 1. This is made up of both the MPU-9255 (gyro, accel, compass) and 
     the BMP280 (pressure sensor).
 ** Wiring
+   - See =J21/J26 Pinout= section for pinout images
 *** I2C BUS 1 
         | Device Pin | Jetson Pin      |
-        |------------|-----------------| 
-        | 3.3v       | (J26 Header)  2 |
-        | GND        | (J26 Header) 11 |
-        | CAN_RX     | (J26 Header)  5 |
-        | CAN_TX     | (J26 Header)  7 |
-*** J21 Header
-#+DOWNLOADED: file:///home/cristian/Downloads/J21_Pinout.png @ 2019-01-26 13:01:22
-[[file:IMU/J21_Pinout_2019-01-26_13-01-22.png]]
+        |------------+-----------------|
+        | VCC 5v     | (J21 Header)  2 |
+        | GND        | (J21 Header)  6 |
+        | SDA        | (J21 Header)  3 |
+        | SCL        | (J21 Header)  5 |
+        | INT        | NOT USED        |
+        | FSYNC      | NOT USED        |
+
 ** Software
    The software to support this device is actually split up into two ROS nodes. The 
    first is located in =I2C_IMU= and the other is in =temp_and_pressure=. This Waveshare
@@ -148,6 +146,16 @@
 #+DOWNLOADED: file:///home/cristian/Desktop/NCD_A_TO_D.png @ 2019-01-25 21:57:52
 [[file:Analog%20Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png]]
 *** NCD 16 Analog to Digital Converter 
+** Wiring
+  - See =J21/J26 Pinout= section for pinout images
+*** I2C BUS 0
+        | Device Pin | Jetson Pin      |
+        |------------+-----------------|
+        | GND        | (J21 Header)  6 |
+        | VCC 5v     | (J21 Header)  2 |
+        | SDA        | (J21 Header)  3 |
+        | SCL        | (J21 Header)  5 |
+** Software
 
 * Digital Sensors
 * 4G LTE
@@ -155,6 +163,13 @@
 #+DOWNLOADED: file:///home/cristian/Desktop/4G_LTE.png @ 2019-01-25 22:00:07
 [[file:4G%20LTE/4G_LTE_2019-01-25_22-00-07.png]]
 *** Sierra Wireless MC7455
+* J21/J26 Pinout 
+*** J21 Header
+#+DOWNLOADED: file:///home/cristian/Downloads/J21_Pinout.png @ 2019-01-26 13:01:22
+[[file:IMU/J21_Pinout_2019-01-26_13-01-22.png]]
+*** J26 Header
+#+DOWNLOADED: file:///home/cristian/Desktop/J26_Header.png @ 2019-01-25 21:45:45
+[[file:Can%20Bus/J26_Header_2019-01-25_21-45-45.png]]
 * Helpful Links
   - [[https://www.jetsonhacks.com/2017/03/25/build-kernel-and-modules-nvidia-jetson-tx2/][How to recompile the kernel to get new kernel modules aka drivers.]]
   - [[https://www.jetsonhacks.com/2017/03/21/jetpack-3-0-nvidia-jetson-tx2-development-kit/][How to reinstall the jetpack.]]
