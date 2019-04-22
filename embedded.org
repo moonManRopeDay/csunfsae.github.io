@@ -14,26 +14,27 @@
 ** Where's the code? 
    Here: [[https://github.com/csunfsae/jetsonTx2][Github Repo]] 
 ** What's the point of this?
-   The purpose of this project is to provide both real time transmission of 
-   sensor data from our formula style electric vehicle and local storage 
-   for this data. In addition to collecting the data this project is also 
-   meant to filter these data signals, interface to the motor controllers, 
-   and provide support for future features such as active aerodynamics, traction 
-   control, etc.
+   Our objective was to build a Data Acquisition System (DAQ) capable of collecting,
+   storing, and transmitting validated data from all on-board equipment to the cloud 
+   in real time utilizing a 4G/LTE network. In doing so, current and future CSUN FSAE teams 
+   will hold the capability to monitor and benchmark the performance of their vehicle 
+   design iterations.
 ** Where do I run this?
   This software is based around [[http://www.ros.org][ROS]] and, is meant to run on an Nvidia
   Jetson Tx2. In addition to this SOC there are other sensors and boards 
   necessary to communicate with other parts of the system. For a full
   parts list refer to the internal documention found on the Google Drive.
+  If you happen to be visiting take a look below to get an idea of what 
+  hardware was used to create this project.
 ** FAQ
 *** Why ROS?
     This is the most commonly asked question we get by other computer science 
     students or engineers. The answer to that question is that it provides an excellent 
     means of inter-process communication so that multiple processes written in different 
-    languages can communicate efficiently and reliably. Additionally it's one of the most 
-    documented and well supported frameworks that plays well with our hardware platform.
-    Lastly it enables us to reuse software so we can focus on adding features to our 
-    system without compromising its reliability. 
+    languages can communicate efficiently and reliably. Additionally it allows for the 
+    software to be expanded upon so that future teams can focus on implementing features
+    such as self-driving, collision detection, etc. Lastly it enables us to reuse software
+    so we can focus on adding features to our system without compromising its reliability. 
 *** Why the Nvidia Jetson?
     This was chosen with a couple of considerations in mind such as I/O availability, 
     flexibility, and speed. It provides all of the necessary means of communication 
@@ -43,19 +44,20 @@
 #+DOWNLOADED: file:///home/cristian/Downloads/JetsonRoshtml.png @ 2019-01-25 18:04:50
 [[file:ROS/JetsonRoshtml_2019-01-25_18-04-50.png]]
 ** Development Philosophy
-   We keep a few things in mind when designing and implementing new ROS nodes.
+   We keep a few things in mind when designing and implementing new features.
     1. How maintainable each node will be in the future.
     2. How reusable each node will be in the future.
    
    Understanding how ROS messages and processes function is essential in making
    wise design decisions. Most people are quick to think that by eliminating ROS Nodes
    the system will become more efficent however this isn't always the case. Additionally
-   it's important to keep in mind that a more monolithic system makes each node more 
-   difficult to maintain and reduces the reusebility of the software (comp 380?).
+   it's important to keep in mind that a monolithic system makes each node more 
+   difficult to maintain and reduces the reusebility of the software.
    Therefore when looking to improve the system by either adding additional functionality
    or making improvements to performance it's important to make sure that each node performs
-   only a single function (e.g. getting data from a single device and publishing its data). The 
-   rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
+   only a single function (e.g. getting data from a single device and publishing its data). 
+
+   The rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
    instead describe parts of the system refrencing ROS nodes along the way that handle 
    that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
    only person developing this so keep the next person informed.
@@ -63,8 +65,8 @@
    This part of the wiki will assume you have a working OS running with all of the necessary
    kernel modules enabled in order to interface with the appropriate hardware. For a guide on
    this sort of stuff look at the "Helpful Links" part of the wiki. Additionally at the time 
-   of writing this wiki 26 January 2019 all of our nodes, services, etc. are based off of the
-   **ROS Melodic Morenia** release. 
+   of ++writing++ editing this wiki ++26 January 2019++ 21 April 2019 all of our nodes, services,
+   etc. are based off of the **ROS Melodic Morenia** release. 
 *** How do I install all the necessary ROS packages?
     - **See the helpful links section on installing ROS on the tx2**
     - Otherwise a not so helpful link to get started can be found here:[[http://wiki.ros.org/melodic][ DIY Installation]]
@@ -80,15 +82,15 @@
 *** How do I run my code?
     Prereq: **Always run =$ source devel/setup.bash= from =catkin_ws= **
     1. Make sure ros core is running: =$ roscore=
-    2. To run each process run =$ rosrun fsae_electric_vehicle **Name of your node**= (if its nodejs add the .js extension)
+    2. To run each process run =$ rosrun fsae_electric_vehicle **Name of your node**= (if its nodejs add the .js extension likewise for python)
 *** I'm tired of running each process one by one! 
-    You'll have to write your own roslaunch file. Be sure to consult the helpful links but here a quick explanation.
+    You'll have to write your own roslaunch file. Be sure to consult the helpful links but looking at the current one will give you some hints.
 
 * Can Bus  
 ** CAN Transceiver
-#+DOWNLOADED: file:///home/cristian/Downloads/SN65HVD230-CAN-Board-2.jpg @ 2019-01-25 18:22:08
-[[file:Can%20Bus/SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg]]
-*** SN65HVD230 CAN Board
+#+DOWNLOADED: file:///tmp/qutebrowser-LxFWXM/proxy.duckduckgo.jpg @ 2019-04-21 22:40:54
+[[file:Can%20Bus/proxy.duckduckgo_2019-04-21_22-40-54.jpg]]
+*** MCP-2551 CAN Board
     Two Can Bus transceivers were used on this system. One was used
     to communicate to the Motor Controller Unit and the other was meant
     for future expansion. 
@@ -97,24 +99,24 @@
    - See =J21/J26 Pinout= section for pinout images
 *** Can Bus 0
         | Device Pin | Jetson Pin      |
-        |------------|-----------------| 
-        | 3.3v       | (J26 Header)  2 |
+        |------------+-----------------|
+        | 5v         | Arduino 5v pin  |
         | GND        | (J26 Header) 11 |
         | CAN_RX     | (J26 Header)  5 |
         | CAN_TX     | (J26 Header)  7 |
 *** Can Bus 1
-        | Device Pin | Jetson Pin          |
-        |------------+---------------------|
-        | 3.3v       | **(J21 Header)** 17 |
-        | GND        | (J26 Header) 21     |
-        | CAN_RX     | (J26 Header) 15     |
-        | CAN_TX     | (J26 Header) 17     |
+        | Device Pin | Jetson Pin         |
+        |------------+--------------------|
+        | 5v         | NOT CURRENTLY USED |
+        | GND        | (J26 Header) 21    |
+        | CAN_RX     | (J26 Header) 15    |
+        | CAN_TX     | (J26 Header) 17    |
 ** Software
-   The software used to interact with the MCU is held in the ROS node titled =CAN_COMMUNICATION=.
+   The software used to interact with the MCU is held in the ROS node titled =CAN_BUS=.
    This node is responsible from sending and receiving messages from the MCU (Motor Control Unit)
-   via the 5 pin Can Bus port on the Unitek motor controller. This Node receives messages from the 
-   web based node and will publish data to both the web node responsible from telemetry and the node
-   which handles storing data into Sqlite.
+   as well as the BMS (Battery Management System) via the 5 pin Can Bus port on the Unitek motor 
+   controller. This Node receives messages from the web based node and publishes data to 
+   the web node responsible from telemetry and sends messages out to the rest of the ECU's mentioned above.
 * IMU
 ** 10 DOF IMU
 #+DOWNLOADED: file:///home/cristian/Desktop/10-DOF-IMU-Sensor-C-intro.jpg @ 2019-01-25 21:53:03
@@ -137,7 +139,7 @@
 
 ** Software
    The software to support this device is actually split up into two ROS nodes. The 
-   first is located in =I2C_IMU= and the other is in =temp_and_pressure=. This Waveshare
+   first is located in =INERTIAL_MEASUREMENT_UNIT= and the other is in =BAROMETRIC_PRESSURE_SENSOR=. This Waveshare
    device is actually composed to two separate devices the MPU-9255 and the BMP280
    which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
    gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
@@ -145,7 +147,7 @@
 ** Analog to Digital Converter
 #+DOWNLOADED: file:///home/cristian/Desktop/NCD_A_TO_D.png @ 2019-01-25 21:57:52
 [[file:Analog%20Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png]]
-*** NCD 16 Analog to Digital Converter 
+*** NCD 16 Channel Analog to Digital Converter 
 ** Wiring
   - See =J21/J26 Pinout= section for pinout images
 *** I2C BUS 0
@@ -156,8 +158,11 @@
         | SDA        | (J21 Header)  3 |
         | SCL        | (J21 Header)  5 |
 ** Software
-
 * Digital Sensors
+#+DOWNLOADED: file:///tmp/qutebrowser-LxFWXM/71DZKc+WAvL._SX466_.jpg @ 2019-04-21 22:57:01
+[[file:Digital%20Sensors/71DZKc+WAvL._SX466__2019-04-21_22-57-01.jpg]]
+** Arduino Uno
+   An arduino uno with an [[https://store.ncd.io/product/i2c-shield-for-arduino-uno/][I2C shield]] was used to interface with the digital sensors 
 * 4G LTE
 ** 4G Modem
 #+DOWNLOADED: file:///home/cristian/Desktop/4G_LTE.png @ 2019-01-25 22:00:07
@@ -180,28 +185,4 @@
   - [[http://wiki.ros.org/roslaunch/XML][How to write your roslauch file.]]
   - [[http://wiki.ros.org/roslaunch/XML][Everything about roslauch files.]] 
 * License
-
-  The MIT License (MIT)
-
-  Copyright (c) 2019 CSUN Formula SAE
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
-
-  
-
+  Formula Embedded is relased under the GNU AFFERO GENERAL PUBLIC LICENSE.

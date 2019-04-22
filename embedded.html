@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-01-26 Sat 19:26 -->
+<!-- 2019-04-21 Sun 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Formula Embedded Wiki</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -193,7 +206,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -242,112 +255,117 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org66143e6">About</a>
+<li><a href="#org43d55c9">About</a>
 <ul>
-<li><a href="#orgb34ee42">Where's the code?</a></li>
-<li><a href="#org3613b05">What's the point of this?</a></li>
-<li><a href="#orgd8811c8">Where do I run this?</a></li>
-<li><a href="#org55a25b7">FAQ</a></li>
+<li><a href="#orgcbe3740">Where's the code?</a></li>
+<li><a href="#org388e26d">What's the point of this?</a></li>
+<li><a href="#orgc99ace7">Where do I run this?</a></li>
+<li><a href="#org8df6f27">FAQ</a></li>
 </ul>
 </li>
-<li><a href="#orgdc17b8d">ROS</a>
+<li><a href="#org77e9ed9">ROS</a>
 <ul>
-<li><a href="#org4241d1e">ROS Layout</a></li>
-<li><a href="#org760faf5">Development Philosophy</a></li>
-<li><a href="#orge330d86">How to get started running ROS?</a></li>
+<li><a href="#org5e7ff9d">ROS Layout</a></li>
+<li><a href="#orgbeee745">Development Philosophy</a></li>
+<li><a href="#org272c47a">How to get started running ROS?</a></li>
 </ul>
 </li>
-<li><a href="#orge406b38">Can Bus</a>
+<li><a href="#org271323e">Can Bus</a>
 <ul>
-<li><a href="#org2ef2b60">CAN Transceiver</a></li>
-<li><a href="#orgcceb59b">Wiring</a></li>
-<li><a href="#org23aeef0">Software</a></li>
+<li><a href="#orgaee98a3">CAN Transceiver</a></li>
+<li><a href="#org20c6d15">Wiring</a></li>
+<li><a href="#org90db821">Software</a></li>
 </ul>
 </li>
-<li><a href="#org973f1a4">IMU</a>
+<li><a href="#org8c20898">IMU</a>
 <ul>
-<li><a href="#org4ca2891">10 DOF IMU</a></li>
-<li><a href="#orgf86c66b">Wiring</a></li>
-<li><a href="#orgfb1b82b">Software</a></li>
+<li><a href="#org73395b0">10 DOF IMU</a></li>
+<li><a href="#org8594c51">Wiring</a></li>
+<li><a href="#org0a927be">Software</a></li>
 </ul>
 </li>
-<li><a href="#orgec59d57">Analog Sensors</a>
+<li><a href="#orgd973adc">Analog Sensors</a>
 <ul>
-<li><a href="#orgb0ef201">Analog to Digital Converter</a></li>
-<li><a href="#org72c5066">Wiring</a></li>
-<li><a href="#org3e3f54d">Software</a></li>
+<li><a href="#org430c29d">Analog to Digital Converter</a></li>
+<li><a href="#org04e4a9b">Wiring</a></li>
+<li><a href="#orge43faf5">Software</a></li>
 </ul>
 </li>
-<li><a href="#orgfb52e00">Digital Sensors</a></li>
-<li><a href="#org4e4ee93">4G LTE</a>
+<li><a href="#org424db36">Digital Sensors</a>
 <ul>
-<li><a href="#orgf1801c4">4G Modem</a></li>
+<li><a href="#org2560a32">Arduino Uno</a></li>
 </ul>
 </li>
-<li><a href="#orgd9847f0">J21/J26 Pinout</a></li>
-<li><a href="#org49cabd5">Helpful Links</a></li>
-<li><a href="#orgbf17da1">License</a></li>
+<li><a href="#org1728c98">4G LTE</a>
+<ul>
+<li><a href="#org7dde34f">4G Modem</a></li>
+</ul>
+</li>
+<li><a href="#org3aed498">J21/J26 Pinout</a></li>
+<li><a href="#orgdaec063">Helpful Links</a></li>
+<li><a href="#orgd37a6a2">License</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org66143e6" class="outline-2">
-<h2 id="org66143e6">About</h2>
-<div class="outline-text-2" id="text-org66143e6">
+<div id="outline-container-org43d55c9" class="outline-2">
+<h2 id="org43d55c9">About</h2>
+<div class="outline-text-2" id="text-org43d55c9">
 </div>
-<div id="outline-container-orgb34ee42" class="outline-3">
-<h3 id="orgb34ee42">Where's the code?</h3>
-<div class="outline-text-3" id="text-orgb34ee42">
+<div id="outline-container-orgcbe3740" class="outline-3">
+<h3 id="orgcbe3740">Where's the code?</h3>
+<div class="outline-text-3" id="text-orgcbe3740">
 <p>
 Here: <a href="https://github.com/csunfsae/jetsonTx2">Github Repo</a> 
 </p>
 </div>
 </div>
-<div id="outline-container-org3613b05" class="outline-3">
-<h3 id="org3613b05">What's the point of this?</h3>
-<div class="outline-text-3" id="text-org3613b05">
+<div id="outline-container-org388e26d" class="outline-3">
+<h3 id="org388e26d">What's the point of this?</h3>
+<div class="outline-text-3" id="text-org388e26d">
 <p>
-The purpose of this project is to provide both real time transmission of 
-sensor data from our formula style electric vehicle and local storage 
-for this data. In addition to collecting the data this project is also 
-meant to filter these data signals, interface to the motor controllers, 
-and provide support for future features such as active aerodynamics, traction 
-control, etc.
+Our objective was to build a Data Acquisition System (DAQ) capable of collecting,
+storing, and transmitting validated data from all on-board equipment to the cloud 
+in real time utilizing a 4G/LTE network. In doing so, current and future CSUN FSAE teams 
+will hold the capability to monitor and benchmark the performance of their vehicle 
+design iterations.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd8811c8" class="outline-3">
-<h3 id="orgd8811c8">Where do I run this?</h3>
-<div class="outline-text-3" id="text-orgd8811c8">
+<div id="outline-container-orgc99ace7" class="outline-3">
+<h3 id="orgc99ace7">Where do I run this?</h3>
+<div class="outline-text-3" id="text-orgc99ace7">
 <p>
 This software is based around <a href="http://www.ros.org">ROS</a> and, is meant to run on an Nvidia
 Jetson Tx2. In addition to this SOC there are other sensors and boards 
 necessary to communicate with other parts of the system. For a full
 parts list refer to the internal documention found on the Google Drive.
+If you happen to be visiting take a look below to get an idea of what 
+hardware was used to create this project.
 </p>
 </div>
 </div>
-<div id="outline-container-org55a25b7" class="outline-3">
-<h3 id="org55a25b7">FAQ</h3>
-<div class="outline-text-3" id="text-org55a25b7">
+<div id="outline-container-org8df6f27" class="outline-3">
+<h3 id="org8df6f27">FAQ</h3>
+<div class="outline-text-3" id="text-org8df6f27">
 </div>
-<div id="outline-container-org24f429f" class="outline-4">
-<h4 id="org24f429f">Why ROS?</h4>
-<div class="outline-text-4" id="text-org24f429f">
+<div id="outline-container-org84a18a0" class="outline-4">
+<h4 id="org84a18a0">Why ROS?</h4>
+<div class="outline-text-4" id="text-org84a18a0">
 <p>
 This is the most commonly asked question we get by other computer science 
 students or engineers. The answer to that question is that it provides an excellent 
 means of inter-process communication so that multiple processes written in different 
-languages can communicate efficiently and reliably. Additionally it's one of the most 
-documented and well supported frameworks that plays well with our hardware platform.
-Lastly it enables us to reuse software so we can focus on adding features to our 
-system without compromising its reliability. 
+languages can communicate efficiently and reliably. Additionally it allows for the 
+software to be expanded upon so that future teams can focus on implementing features
+such as self-driving, collision detection, etc. Lastly it enables us to reuse software
+so we can focus on adding features to our system without compromising its reliability. 
 </p>
 </div>
 </div>
-<div id="outline-container-orgecb7964" class="outline-4">
-<h4 id="orgecb7964">Why the Nvidia Jetson?</h4>
-<div class="outline-text-4" id="text-orgecb7964">
+<div id="outline-container-orgec05c58" class="outline-4">
+<h4 id="orgec05c58">Why the Nvidia Jetson?</h4>
+<div class="outline-text-4" id="text-orgec05c58">
 <p>
 This was chosen with a couple of considerations in mind such as I/O availability, 
 flexibility, and speed. It provides all of the necessary means of communication 
@@ -357,13 +375,13 @@ with our sensors and ECUs found on our electric vehicle.
 </div>
 </div>
 </div>
-<div id="outline-container-orgdc17b8d" class="outline-2">
-<h2 id="orgdc17b8d">ROS</h2>
-<div class="outline-text-2" id="text-orgdc17b8d">
+<div id="outline-container-org77e9ed9" class="outline-2">
+<h2 id="org77e9ed9">ROS</h2>
+<div class="outline-text-2" id="text-org77e9ed9">
 </div>
-<div id="outline-container-org4241d1e" class="outline-3">
-<h3 id="org4241d1e">ROS Layout</h3>
-<div class="outline-text-3" id="text-org4241d1e">
+<div id="outline-container-org5e7ff9d" class="outline-3">
+<h3 id="org5e7ff9d">ROS Layout</h3>
+<div class="outline-text-3" id="text-org5e7ff9d">
 
 <div class="figure">
 <p><img src="ROS/JetsonRoshtml_2019-01-25_18-04-50.png" alt="JetsonRoshtml_2019-01-25_18-04-50.png" />
@@ -371,11 +389,11 @@ with our sensors and ECUs found on our electric vehicle.
 </div>
 </div>
 </div>
-<div id="outline-container-org760faf5" class="outline-3">
-<h3 id="org760faf5">Development Philosophy</h3>
-<div class="outline-text-3" id="text-org760faf5">
+<div id="outline-container-orgbeee745" class="outline-3">
+<h3 id="orgbeee745">Development Philosophy</h3>
+<div class="outline-text-3" id="text-orgbeee745">
 <p>
-We keep a few things in mind when designing and implementing new ROS nodes.
+We keep a few things in mind when designing and implementing new features.
 </p>
 <ol class="org-ol">
 <li>How maintainable each node will be in the future.</li>
@@ -386,41 +404,44 @@ We keep a few things in mind when designing and implementing new ROS nodes.
 Understanding how ROS messages and processes function is essential in making
 wise design decisions. Most people are quick to think that by eliminating ROS Nodes
 the system will become more efficent however this isn't always the case. Additionally
-it's important to keep in mind that a more monolithic system makes each node more 
-difficult to maintain and reduces the reusebility of the software (comp 380?).
+it's important to keep in mind that a monolithic system makes each node more 
+difficult to maintain and reduces the reusebility of the software.
 Therefore when looking to improve the system by either adding additional functionality
 or making improvements to performance it's important to make sure that each node performs
-only a single function (e.g. getting data from a single device and publishing its data). The 
-rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
+only a single function (e.g. getting data from a single device and publishing its data). 
+</p>
+
+<p>
+The rest of the sections of the wiki will not necessarily describe individual ROS nodes but 
 instead describe parts of the system refrencing ROS nodes along the way that handle 
 that part of the system. NOTE to maintainers: Update the ROS diagram you wont be the 
 only person developing this so keep the next person informed.
 </p>
 </div>
 </div>
-<div id="outline-container-orge330d86" class="outline-3">
-<h3 id="orge330d86">How to get started running ROS?</h3>
-<div class="outline-text-3" id="text-orge330d86">
+<div id="outline-container-org272c47a" class="outline-3">
+<h3 id="org272c47a">How to get started running ROS?</h3>
+<div class="outline-text-3" id="text-org272c47a">
 <p>
 This part of the wiki will assume you have a working OS running with all of the necessary
 kernel modules enabled in order to interface with the appropriate hardware. For a guide on
 this sort of stuff look at the "Helpful Links" part of the wiki. Additionally at the time 
-of writing this wiki 26 January 2019 all of our nodes, services, etc. are based off of the
-<b><b>ROS Melodic Morenia</b></b> release. 
+of <del><del>writing</del></del> editing this wiki <del><del>26 January 2019</del></del> 21 April 2019 all of our nodes, services,
+etc. are based off of the <b><b>ROS Melodic Morenia</b></b> release. 
 </p>
 </div>
-<div id="outline-container-org40beadf" class="outline-4">
-<h4 id="org40beadf">How do I install all the necessary ROS packages?</h4>
-<div class="outline-text-4" id="text-org40beadf">
+<div id="outline-container-org68a6b09" class="outline-4">
+<h4 id="org68a6b09">How do I install all the necessary ROS packages?</h4>
+<div class="outline-text-4" id="text-org68a6b09">
 <ul class="org-ul">
 <li><b><b>See the helpful links section on installing ROS on the tx2</b></b></li>
 <li>Otherwise a not so helpful link to get started can be found here:<a href="http://wiki.ros.org/melodic"> DIY Installation</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8ba37bd" class="outline-4">
-<h4 id="org8ba37bd">How do I use Nodejs ROS nodes?</h4>
-<div class="outline-text-4" id="text-org8ba37bd">
+<div id="outline-container-org5f950a2" class="outline-4">
+<h4 id="org5f950a2">How do I use Nodejs ROS nodes?</h4>
+<div class="outline-text-4" id="text-org5f950a2">
 <ul class="org-ul">
 <li>Make sure node is installed. See helpful links.</li>
 <li>Make sure your Node modules are installed.</li>
@@ -428,9 +449,9 @@ of writing this wiki 26 January 2019 all of our nodes, services, etc. are based 
 </ul>
 </div>
 </div>
-<div id="outline-container-org73a4921" class="outline-4">
-<h4 id="org73a4921">How do I compile my code?</h4>
-<div class="outline-text-4" id="text-org73a4921">
+<div id="outline-container-orge30fa53" class="outline-4">
+<h4 id="orge30fa53">How do I compile my code?</h4>
+<div class="outline-text-4" id="text-orge30fa53">
 <ol class="org-ol">
 <li>Make sure the CMakeList File is correctly configured.</li>
 <li>Make sure you <code>$ source devel/setup.bash</code> from the <code>catkin_ws</code> directory of the project.</li>
@@ -439,45 +460,45 @@ of writing this wiki 26 January 2019 all of our nodes, services, etc. are based 
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfeae145" class="outline-4">
-<h4 id="orgfeae145">How do I run my code?</h4>
-<div class="outline-text-4" id="text-orgfeae145">
+<div id="outline-container-org4c366ab" class="outline-4">
+<h4 id="org4c366ab">How do I run my code?</h4>
+<div class="outline-text-4" id="text-org4c366ab">
 <p>
 Prereq: <b>*Always run <code>$ source devel/setup.bash</code> from <code>catkin_ws</code> *</b>
 </p>
 <ol class="org-ol">
 <li>Make sure ros core is running: <code>$ roscore</code></li>
-<li>To run each process run <code>$ rosrun fsae_electric_vehicle **Name of your node**</code> (if its nodejs add the .js extension)</li>
+<li>To run each process run <code>$ rosrun fsae_electric_vehicle **Name of your node**</code> (if its nodejs add the .js extension likewise for python)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org1fdadc1" class="outline-4">
-<h4 id="org1fdadc1">I'm tired of running each process one by one!</h4>
-<div class="outline-text-4" id="text-org1fdadc1">
+<div id="outline-container-org3f93b68" class="outline-4">
+<h4 id="org3f93b68">I'm tired of running each process one by one!</h4>
+<div class="outline-text-4" id="text-org3f93b68">
 <p>
-You'll have to write your own roslaunch file. Be sure to consult the helpful links but here a quick explanation.
+You'll have to write your own roslaunch file. Be sure to consult the helpful links but looking at the current one will give you some hints.
 </p>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge406b38" class="outline-2">
-<h2 id="orge406b38">Can Bus</h2>
-<div class="outline-text-2" id="text-orge406b38">
+<div id="outline-container-org271323e" class="outline-2">
+<h2 id="org271323e">Can Bus</h2>
+<div class="outline-text-2" id="text-org271323e">
 </div>
-<div id="outline-container-org2ef2b60" class="outline-3">
-<h3 id="org2ef2b60">CAN Transceiver</h3>
-<div class="outline-text-3" id="text-org2ef2b60">
+<div id="outline-container-orgaee98a3" class="outline-3">
+<h3 id="orgaee98a3">CAN Transceiver</h3>
+<div class="outline-text-3" id="text-orgaee98a3">
 
 <div class="figure">
-<p><img src="Can%20Bus/SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" alt="SN65HVD230-CAN-Board-2_2019-01-25_18-22-08.jpg" />
+<p><img src="Can Bus/proxy.duckduckgo_2019-04-21_22-40-54.jpg" alt="proxy.duckduckgo_2019-04-21_22-40-54.jpg" />
 </p>
 </div>
 </div>
-<div id="outline-container-org2b13d27" class="outline-4">
-<h4 id="org2b13d27">SN65HVD230 CAN Board</h4>
-<div class="outline-text-4" id="text-org2b13d27">
+<div id="outline-container-orgacf4f4e" class="outline-4">
+<h4 id="orgacf4f4e">MCP-2551 CAN Board</h4>
+<div class="outline-text-4" id="text-orgacf4f4e">
 <p>
 Two Can Bus transceivers were used on this system. One was used
 to communicate to the Motor Controller Unit and the other was meant
@@ -486,17 +507,17 @@ for future expansion.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcceb59b" class="outline-3">
-<h3 id="orgcceb59b">Wiring</h3>
-<div class="outline-text-3" id="text-orgcceb59b">
+<div id="outline-container-org20c6d15" class="outline-3">
+<h3 id="org20c6d15">Wiring</h3>
+<div class="outline-text-3" id="text-org20c6d15">
 <ul class="org-ul">
 <li>These transceivers are connected to the Jetson Tx2 using the J26 header.</li>
 <li>See <code>J21/J26 Pinout</code> section for pinout images</li>
 </ul>
 </div>
-<div id="outline-container-org0d048b1" class="outline-4">
-<h4 id="org0d048b1">Can Bus 0</h4>
-<div class="outline-text-4" id="text-org0d048b1">
+<div id="outline-container-org42c1377" class="outline-4">
+<h4 id="org42c1377">Can Bus 0</h4>
+<div class="outline-text-4" id="text-org42c1377">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -513,8 +534,8 @@ for future expansion.
 </thead>
 <tbody>
 <tr>
-<td class="org-left">3.3v</td>
-<td class="org-left">(J26 Header)  2</td>
+<td class="org-left">5v</td>
+<td class="org-left">Arduino 5v pin</td>
 </tr>
 
 <tr>
@@ -535,9 +556,9 @@ for future expansion.
 </table>
 </div>
 </div>
-<div id="outline-container-org85218b7" class="outline-4">
-<h4 id="org85218b7">Can Bus 1</h4>
-<div class="outline-text-4" id="text-org85218b7">
+<div id="outline-container-org478a62e" class="outline-4">
+<h4 id="org478a62e">Can Bus 1</h4>
+<div class="outline-text-4" id="text-org478a62e">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -554,8 +575,8 @@ for future expansion.
 </thead>
 <tbody>
 <tr>
-<td class="org-left">3.3v</td>
-<td class="org-left"><b><b>(J21 Header)</b></b> 17</td>
+<td class="org-left">5v</td>
+<td class="org-left">NOT CURRENTLY USED</td>
 </tr>
 
 <tr>
@@ -577,35 +598,35 @@ for future expansion.
 </div>
 </div>
 </div>
-<div id="outline-container-org23aeef0" class="outline-3">
-<h3 id="org23aeef0">Software</h3>
-<div class="outline-text-3" id="text-org23aeef0">
+<div id="outline-container-org90db821" class="outline-3">
+<h3 id="org90db821">Software</h3>
+<div class="outline-text-3" id="text-org90db821">
 <p>
-The software used to interact with the MCU is held in the ROS node titled <code>CAN_COMMUNICATION</code>.
+The software used to interact with the MCU is held in the ROS node titled <code>CAN_BUS</code>.
 This node is responsible from sending and receiving messages from the MCU (Motor Control Unit)
-via the 5 pin Can Bus port on the Unitek motor controller. This Node receives messages from the 
-web based node and will publish data to both the web node responsible from telemetry and the node
-which handles storing data into Sqlite.
+as well as the BMS (Battery Management System) via the 5 pin Can Bus port on the Unitek motor 
+controller. This Node receives messages from the web based node and publishes data to 
+the web node responsible from telemetry and sends messages out to the rest of the ECU's mentioned above.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org973f1a4" class="outline-2">
-<h2 id="org973f1a4">IMU</h2>
-<div class="outline-text-2" id="text-org973f1a4">
+<div id="outline-container-org8c20898" class="outline-2">
+<h2 id="org8c20898">IMU</h2>
+<div class="outline-text-2" id="text-org8c20898">
 </div>
-<div id="outline-container-org4ca2891" class="outline-3">
-<h3 id="org4ca2891">10 DOF IMU</h3>
-<div class="outline-text-3" id="text-org4ca2891">
+<div id="outline-container-org73395b0" class="outline-3">
+<h3 id="org73395b0">10 DOF IMU</h3>
+<div class="outline-text-3" id="text-org73395b0">
 
 <div class="figure">
 <p><img src="IMU/10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg" alt="10-DOF-IMU-Sensor-C-intro_2019-01-25_21-53-03.jpg" />
 </p>
 </div>
 </div>
-<div id="outline-container-orga2d09f6" class="outline-4">
-<h4 id="orga2d09f6">Waveshare 10 DOF IMU (C)</h4>
-<div class="outline-text-4" id="text-orga2d09f6">
+<div id="outline-container-orgfe0279a" class="outline-4">
+<h4 id="orgfe0279a">Waveshare 10 DOF IMU (C)</h4>
+<div class="outline-text-4" id="text-orgfe0279a">
 <p>
 This sensor was chosen as it's directly compatible with the jetson via I2C. It currently
 is installed on I2C bus 1. This is made up of both the MPU-9255 (gyro, accel, compass) and 
@@ -614,16 +635,16 @@ the BMP280 (pressure sensor).
 </div>
 </div>
 </div>
-<div id="outline-container-orgf86c66b" class="outline-3">
-<h3 id="orgf86c66b">Wiring</h3>
-<div class="outline-text-3" id="text-orgf86c66b">
+<div id="outline-container-org8594c51" class="outline-3">
+<h3 id="org8594c51">Wiring</h3>
+<div class="outline-text-3" id="text-org8594c51">
 <ul class="org-ul">
 <li>See <code>J21/J26 Pinout</code> section for pinout images</li>
 </ul>
 </div>
-<div id="outline-container-orga97cc95" class="outline-4">
-<h4 id="orga97cc95">I2C BUS 1</h4>
-<div class="outline-text-4" id="text-orga97cc95">
+<div id="outline-container-org66101d9" class="outline-4">
+<h4 id="org66101d9">I2C BUS 1</h4>
+<div class="outline-text-4" id="text-org66101d9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -674,12 +695,12 @@ the BMP280 (pressure sensor).
 </div>
 </div>
 
-<div id="outline-container-orgfb1b82b" class="outline-3">
-<h3 id="orgfb1b82b">Software</h3>
-<div class="outline-text-3" id="text-orgfb1b82b">
+<div id="outline-container-org0a927be" class="outline-3">
+<h3 id="org0a927be">Software</h3>
+<div class="outline-text-3" id="text-org0a927be">
 <p>
 The software to support this device is actually split up into two ROS nodes. The 
-first is located in <code>I2C_IMU</code> and the other is in <code>temp_and_pressure</code>. This Waveshare
+first is located in <code>INERTIAL_MEASUREMENT_UNIT</code> and the other is in <code>BAROMETRIC_PRESSURE_SENSOR</code>. This Waveshare
 device is actually composed to two separate devices the MPU-9255 and the BMP280
 which have two separate addresses on the I2C bus. The MPU-9255 is composed of a
 gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sensor.
@@ -687,33 +708,33 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </div>
 </div>
 </div>
-<div id="outline-container-orgec59d57" class="outline-2">
-<h2 id="orgec59d57">Analog Sensors</h2>
-<div class="outline-text-2" id="text-orgec59d57">
+<div id="outline-container-orgd973adc" class="outline-2">
+<h2 id="orgd973adc">Analog Sensors</h2>
+<div class="outline-text-2" id="text-orgd973adc">
 </div>
-<div id="outline-container-orgb0ef201" class="outline-3">
-<h3 id="orgb0ef201">Analog to Digital Converter</h3>
-<div class="outline-text-3" id="text-orgb0ef201">
+<div id="outline-container-org430c29d" class="outline-3">
+<h3 id="org430c29d">Analog to Digital Converter</h3>
+<div class="outline-text-3" id="text-org430c29d">
 
 <div class="figure">
-<p><img src="Analog%20Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png" alt="NCD_A_TO_D_2019-01-25_21-57-52.png" />
+<p><img src="Analog Sensors/NCD_A_TO_D_2019-01-25_21-57-52.png" alt="NCD_A_TO_D_2019-01-25_21-57-52.png" />
 </p>
 </div>
 </div>
-<div id="outline-container-org823b1d4" class="outline-4">
-<h4 id="org823b1d4">NCD 16 Analog to Digital Converter</h4>
+<div id="outline-container-org707f155" class="outline-4">
+<h4 id="org707f155">NCD 16 Channel Analog to Digital Converter</h4>
 </div>
 </div>
-<div id="outline-container-org72c5066" class="outline-3">
-<h3 id="org72c5066">Wiring</h3>
-<div class="outline-text-3" id="text-org72c5066">
+<div id="outline-container-org04e4a9b" class="outline-3">
+<h3 id="org04e4a9b">Wiring</h3>
+<div class="outline-text-3" id="text-org04e4a9b">
 <ul class="org-ul">
 <li>See <code>J21/J26 Pinout</code> section for pinout images</li>
 </ul>
 </div>
-<div id="outline-container-org2b4bc3e" class="outline-4">
-<h4 id="org2b4bc3e">I2C BUS 0</h4>
-<div class="outline-text-4" id="text-org2b4bc3e">
+<div id="outline-container-orge245b23" class="outline-4">
+<h4 id="orge245b23">I2C BUS 0</h4>
+<div class="outline-text-4" id="text-orge245b23">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -753,39 +774,53 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </div>
 </div>
 </div>
-<div id="outline-container-org3e3f54d" class="outline-3">
-<h3 id="org3e3f54d">Software</h3>
+<div id="outline-container-orge43faf5" class="outline-3">
+<h3 id="orge43faf5">Software</h3>
 </div>
 </div>
-
-<div id="outline-container-orgfb52e00" class="outline-2">
-<h2 id="orgfb52e00">Digital Sensors</h2>
-</div>
-<div id="outline-container-org4e4ee93" class="outline-2">
-<h2 id="org4e4ee93">4G LTE</h2>
-<div class="outline-text-2" id="text-org4e4ee93">
-</div>
-<div id="outline-container-orgf1801c4" class="outline-3">
-<h3 id="orgf1801c4">4G Modem</h3>
-<div class="outline-text-3" id="text-orgf1801c4">
+<div id="outline-container-org424db36" class="outline-2">
+<h2 id="org424db36">Digital Sensors</h2>
+<div class="outline-text-2" id="text-org424db36">
 
 <div class="figure">
-<p><img src="4G%20LTE/4G_LTE_2019-01-25_22-00-07.png" alt="4G_LTE_2019-01-25_22-00-07.png" />
+<p><img src="Digital Sensors/71DZKc+WAvL._SX466__2019-04-21_22-57-01.jpg" alt="71DZKc+WAvL._SX466__2019-04-21_22-57-01.jpg" />
 </p>
 </div>
 </div>
-<div id="outline-container-orgd0afa99" class="outline-4">
-<h4 id="orgd0afa99">Sierra Wireless MC7455</h4>
+<div id="outline-container-org2560a32" class="outline-3">
+<h3 id="org2560a32">Arduino Uno</h3>
+<div class="outline-text-3" id="text-org2560a32">
+<p>
+An arduino uno with an <a href="https://store.ncd.io/product/i2c-shield-for-arduino-uno/">I2C shield</a> was used to interface with the digital sensors 
+</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd9847f0" class="outline-2">
-<h2 id="orgd9847f0">J21/J26 Pinout</h2>
-<div class="outline-text-2" id="text-orgd9847f0">
+<div id="outline-container-org1728c98" class="outline-2">
+<h2 id="org1728c98">4G LTE</h2>
+<div class="outline-text-2" id="text-org1728c98">
 </div>
-<div id="outline-container-org3296739" class="outline-4">
-<h4 id="org3296739">J21 Header</h4>
-<div class="outline-text-4" id="text-org3296739">
+<div id="outline-container-org7dde34f" class="outline-3">
+<h3 id="org7dde34f">4G Modem</h3>
+<div class="outline-text-3" id="text-org7dde34f">
+
+<div class="figure">
+<p><img src="4G LTE/4G_LTE_2019-01-25_22-00-07.png" alt="4G_LTE_2019-01-25_22-00-07.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org55d55af" class="outline-4">
+<h4 id="org55d55af">Sierra Wireless MC7455</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org3aed498" class="outline-2">
+<h2 id="org3aed498">J21/J26 Pinout</h2>
+<div class="outline-text-2" id="text-org3aed498">
+</div>
+<div id="outline-container-orga28b9a0" class="outline-4">
+<h4 id="orga28b9a0">J21 Header</h4>
+<div class="outline-text-4" id="text-orga28b9a0">
 
 <div class="figure">
 <p><img src="IMU/J21_Pinout_2019-01-26_13-01-22.png" alt="J21_Pinout_2019-01-26_13-01-22.png" />
@@ -793,20 +828,20 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </div>
 </div>
 </div>
-<div id="outline-container-org9844569" class="outline-4">
-<h4 id="org9844569">J26 Header</h4>
-<div class="outline-text-4" id="text-org9844569">
+<div id="outline-container-orgb2771dd" class="outline-4">
+<h4 id="orgb2771dd">J26 Header</h4>
+<div class="outline-text-4" id="text-orgb2771dd">
 
 <div class="figure">
-<p><img src="Can%20Bus/J26_Header_2019-01-25_21-45-45.png" alt="J26_Header_2019-01-25_21-45-45.png" />
+<p><img src="Can Bus/J26_Header_2019-01-25_21-45-45.png" alt="J26_Header_2019-01-25_21-45-45.png" />
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org49cabd5" class="outline-2">
-<h2 id="org49cabd5">Helpful Links</h2>
-<div class="outline-text-2" id="text-org49cabd5">
+<div id="outline-container-orgdaec063" class="outline-2">
+<h2 id="orgdaec063">Helpful Links</h2>
+<div class="outline-text-2" id="text-orgdaec063">
 <ul class="org-ul">
 <li><a href="https://www.jetsonhacks.com/2017/03/25/build-kernel-and-modules-nvidia-jetson-tx2/">How to recompile the kernel to get new kernel modules aka drivers.</a></li>
 <li><a href="https://www.jetsonhacks.com/2017/03/21/jetpack-3-0-nvidia-jetson-tx2-development-kit/">How to reinstall the jetpack.</a></li>
@@ -819,46 +854,18 @@ gyroscope, accelerometer, and compass. The BMP280 is a pressure/temperature sens
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbf17da1" class="outline-2">
-<h2 id="orgbf17da1">License</h2>
-<div class="outline-text-2" id="text-orgbf17da1">
+<div id="outline-container-orgd37a6a2" class="outline-2">
+<h2 id="orgd37a6a2">License</h2>
+<div class="outline-text-2" id="text-orgd37a6a2">
 <p>
-The MIT License (MIT)
-</p>
-
-<p>
-Copyright (c) 2019 CSUN Formula SAE
-</p>
-
-<p>
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-</p>
-
-<p>
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-</p>
-
-<p>
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Formula Embedded is relased under the GNU AFFERO GENERAL PUBLIC LICENSE.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Forumula Embedded</p>
-<p class="date">Created: 2019-01-26 Sat 19:26</p>
+<p class="date">Created: 2019-04-21 Sun 23:01</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
