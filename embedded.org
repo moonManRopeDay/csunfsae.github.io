@@ -41,8 +41,10 @@
     with our sensors and ECUs found on our electric vehicle.
 * ROS
 ** ROS Layout
-#+DOWNLOADED: file:///home/cristian/Downloads/JetsonRoshtml.png @ 2019-01-25 18:04:50
-[[file:ROS/JetsonRoshtml_2019-01-25_18-04-50.png]]
+   #+DOWNLOADED: file:///home/thehamop/Desktop/ros.png @ 2019-04-29 17:36:04
+[[file:ROS/ros_2019-04-29_17-36-04.png]]
+
+
 ** Development Philosophy
    We keep a few things in mind when designing and implementing new features.
     1. How maintainable each node will be in the future.
@@ -66,7 +68,7 @@
    kernel modules enabled in order to interface with the appropriate hardware. For a guide on
    this sort of stuff look at the "Helpful Links" part of the wiki. Additionally at the time 
    of ++writing++ editing this wiki ++26 January 2019++ 21 April 2019 all of our nodes, services,
-   etc. are based off of the **ROS Melodic Morenia** release. 
+   etc. are based off of the **ROS Kinetic** release. 
 *** How do I install all the necessary ROS packages?
     - **See the helpful links section on installing ROS on the tx2**
     - Otherwise a not so helpful link to get started can be found here:[[http://wiki.ros.org/melodic][ DIY Installation]]
