@@ -87,6 +87,15 @@
 *** I'm tired of running each process one by one! 
     You'll have to write your own roslaunch file. Be sure to consult the helpful links but looking at the current one will give you some hints.
 
+* Developement Board
+** Nvidia Jetson Tx2
+#+DOWNLOADED: file:///home/thehamop/Desktop/tx2.jpeg @ 2019-05-03 02:50:48
+[[file:Developement%20Board/tx2_2019-05-03_02-50-48.jpeg]]
+** Software
+   This is our embedded linux platform where all of our embedded code lives and is responsible
+   for two way telemetery and real time data acquisition. Additional Kernel modules have 
+   been compiled in order to support devices such as CAN transcievers. In addition several other 
+   dependencies have been installed (if you're new to the project refer to the google drive)
 * Can Bus  
 ** CAN Transceiver
 #+DOWNLOADED: file:///tmp/qutebrowser-LxFWXM/proxy.duckduckgo.jpg @ 2019-04-21 22:40:54
