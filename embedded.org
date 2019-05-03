@@ -44,7 +44,6 @@
    #+DOWNLOADED: file:///home/thehamop/Desktop/ros.png @ 2019-04-29 17:36:04
 [[file:ROS/ros_2019-04-29_17-36-04.png]]
 
-
 ** Development Philosophy
    We keep a few things in mind when designing and implementing new features.
     1. How maintainable each node will be in the future.
@@ -160,16 +159,28 @@
         | SDA        | (J21 Header)  3 |
         | SCL        | (J21 Header)  5 |
 ** Software
+  The ROS node for the analog to digital converter is named =ANALOG_TO_DIGITAL_CONVERTER= its main responsiblity is to make requests to each of the 
+  ADS7828 Texas Instrument chips on the ADC board shown above. These requests are sent through write commands and consist of a stream of bits outlined 
+  in the data sheet. Becuase each of these ADCs multiplixes between each of the eight channels it has it must be sent a command to read off the right channel.
 * Digital Sensors
 #+DOWNLOADED: file:///tmp/qutebrowser-LxFWXM/71DZKc+WAvL._SX466_.jpg @ 2019-04-21 22:57:01
 [[file:Digital%20Sensors/71DZKc+WAvL._SX466__2019-04-21_22-57-01.jpg]]
 ** Arduino Uno
-   An arduino uno with an [[https://store.ncd.io/product/i2c-shield-for-arduino-uno/][I2C shield]] was used to interface with the digital sensors 
+   An arduino uno with an [[https://store.ncd.io/product/i2c-shield-for-arduino-uno/][I2C shield]] was used to interface with the digital sensors. As of the time of writing this its performance is lack luster when calcualting
+   speed. This may be due to its ability to handle the amount of interrupts it's sent while the vehicle is running and may be switched out if it's a hardware limitation.
+** Software
+   The software for this part of the system is located in the ROS node titled =SPEEDOMOTER=. It was decided that the only digital sensors on the car would be for calcualting 
+   the speed at which the car was moving therefore a microcontroller was chosen to calculate that for us and then setup the I2C line. Similar to how the Analog to Digital 
+   converter works requests for data are made to this device over the bus and the speed in MPH is returned to the Jetson Tx2. 
 * 4G LTE
 ** 4G Modem
 #+DOWNLOADED: file:///home/cristian/Desktop/4G_LTE.png @ 2019-01-25 22:00:07
 [[file:4G%20LTE/4G_LTE_2019-01-25_22-00-07.png]]
 *** Sierra Wireless MC7455
+** Software
+   Although this piece of data functions as our method of communication to the outside world (Our Web Server) it also give us a few data points such as Altitude, GPS, 
+   and Satalite Data. The communication protocol used for interfacing with this is Serial off of character driver. In order to setup what data is being sent the minicom
+   utility must be used ahead of time before simply reading data off of =/dev/tty*USB*=. The code can be found in the ROS node labled =GPS=.
 * J21/J26 Pinout 
 *** J21 Header
 #+DOWNLOADED: file:///home/cristian/Downloads/J21_Pinout.png @ 2019-01-26 13:01:22
